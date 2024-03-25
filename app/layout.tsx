@@ -23,7 +23,7 @@ export default function RootLayout({
        <Sidebar></Sidebar>
        <Header></Header>
        <PageWrapper>
-       {/* {children} */}
+       {children}
        </PageWrapper>
         </body>
     </html>
