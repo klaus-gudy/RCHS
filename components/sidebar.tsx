@@ -1,10 +1,22 @@
 import { SIDENAV_ITEMS } from "@/SIDEBAR_CONSTANTS";
 import Image from "next/image";
 import { SideBarMenuItem } from "./sidebar-menu-item";
+import classNames from "classnames";
 
-export default function Sidebar() {
+export default function Sidebar({
+  toggleCollapse,
+}: {
+  toggleCollapse: boolean;
+}) {
+  const asideStyle = classNames(
+    "fixed bg-[#3498db] text-gray-200 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]",
+    {
+        ["w-[5rem]"]: toggleCollapse,
+        ["w-[20rem]"]: !toggleCollapse,
+    }
+  );
   return (
-    <aside className="fixed bg-[#3498db] text-gray-200 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]">
+    <aside className={asideStyle}>
       <div className="flex relative items-center py-5 px-3.5">
         <Image
           alt="RCHS System"
