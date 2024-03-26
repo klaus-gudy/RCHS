@@ -4,13 +4,13 @@ import { BsCalendar, BsCalendarFill, BsFileBarGraphFill, BsFillPersonLinesFill, 
 export const SIDENAV_ITEMS:SideNavItem[]=[
     {
         title: "Dashboard",
-        path: "/",
+        path: "/home",
         icon: BsHouseDoorFill ({size:20})
         // icon: <BsHouseDoor/>
     },
     {
         title: "Patient Records",
-        path: "/patients",
+        path: "/Records",
         icon:  BsFillPersonLinesFill ({size:20})
     },
     {
