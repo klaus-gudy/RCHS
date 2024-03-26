@@ -33,7 +33,7 @@ export default function Sidebar({
         <div className="flex flex-col gap-2 px-4">
           {SIDENAV_ITEMS.map((item, index) => {
             return (
-              <SideBarMenuItem item={item} toggleCollapse={toggleCollapse} />
+              <SideBarMenuItem key={index} item={item} toggleCollapse={toggleCollapse} />
             );
           })}
         </div>

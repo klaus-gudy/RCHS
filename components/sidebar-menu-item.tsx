@@ -41,9 +41,13 @@ export const SideBarMenuItem = ({
                 <span className="ml-3 text-base leading-6 font-semibold">
                   {item.title}
                 </span>
+                <BsChevronRight
+                  className={`${
+                    subMenuOpen ? "rotate-90" : ""
+                  } ml-auto stroke-2 text-xs`}
+                />
               </>
             )}
-            <BsChevronRight className="ml-auto stroke-2 text-xs" />
           </a>
           {subMenuOpen && !toggleCollapse && (
             <div className="bg-[#3498db] border-l-4 ">
