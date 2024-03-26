@@ -10,7 +10,7 @@ export const SideBarMenuItem = ({ item }: { item: SideNavItem }) => {
         <div></div>
       ) : (
         <Link href={item.path} className={linkStyle}>
-          {item.icon}
+                 { item.icon}
           <span className="ml-3 leading-6 font-semibold">{item.title}</span>
         </Link>
       )}

@@ -12,7 +12,7 @@ export default function Sidebar(){
             <nav className="flex flex-col gap-2 transition duration-300">
                 {
                     SIDENAV_ITEMS.map((item, index) => {
-                        return <SideBarMenuItem item={item}></SideBarMenuItem>
+                        return <SideBarMenuItem item={item}/>
                     })
                 }
             </nav>
