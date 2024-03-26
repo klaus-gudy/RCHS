@@ -7,6 +7,9 @@ export default function Sidebar(){
                 <Image alt="RCHS System" src='/logo.png' className='w-12 mx-3.5 min-h-fit' width={35} height={35}></Image>
                 <h3 className="pl-2 font-bold text-2xl">RCHS System</h3>
             </div>
+            <nav className="flex flex-col gap-2 transition duration-300">
+
+            </nav>
         </aside>
     );
 }
