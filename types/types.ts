@@ -6,7 +6,7 @@ export type SideNavItem = {
     subMenuItems?: SideNavItem[];
   };
   
-  export type SideNavItemGroup = {
-    title: string;
-    menuList: SideNavItem[]
-  }
+  // export type SideNavItemGroup = {
+  //   title: string;
+  //   menuList: SideNavItem[]
+  // }
