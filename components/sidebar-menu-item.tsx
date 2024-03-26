@@ -52,7 +52,7 @@ export const SideBarMenuItem = ({
           {subMenuOpen && !toggleCollapse && (
             <div className="bg-[#3498db] border-l-4 ">
               <div className="grid gap-y-2 px-10 py-3 leading-5">
-                {item.subMenuItems.map((subItem, index) => {
+                {item?.subMenuItems?.map((subItem, index) => {
                   return (
                     <Link
                       key={index}
