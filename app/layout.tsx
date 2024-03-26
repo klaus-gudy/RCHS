@@ -20,9 +20,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div className="flex min-h-screen">
         <Sidebar></Sidebar>
         <Header></Header>
         <PageWrapper>{children}</PageWrapper>
+        </div>
       </body>
     </html>
   );
