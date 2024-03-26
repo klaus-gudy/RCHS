@@ -11,7 +11,7 @@ export default function Sidebar({
   const asideStyle = classNames(
     "fixed bg-[#3498db] text-gray-200 z-50 h-full shadow-lg shadow-gray-900/20 transition duration-300 ease-in-out w-[20rem]",
     {
-      ["w-[5.4rem]"]: toggleCollapse,
+      ["sm:w-[5.4rem] sm:left-0 left-[-100%]"]: toggleCollapse,
       ["w-[20rem]"]: !toggleCollapse,
     }
   );
