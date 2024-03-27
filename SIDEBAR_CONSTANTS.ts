@@ -4,7 +4,7 @@ import { BsCalendar, BsCalendarFill, BsFileBarGraphFill, BsFillPersonLinesFill, 
 export const SIDENAV_ITEMS:SideNavItem[]=[
     {
         title: "Dashboard",
-        path: "/home",
+        path: "/Home",
         icon: BsHouseDoorFill ({size:20})
         // icon: <BsHouseDoor/>
     },
@@ -15,32 +15,32 @@ export const SIDENAV_ITEMS:SideNavItem[]=[
     },
     {
         title: "Hospital Visits",
-        path: "/visits",
+        path: "/Visits",
         icon:  BsCalendarFill ({size:20}),
         submenu: true,
         subMenuItems: [
-            {title: "All", path: "/visits"},
-            {title: "New", path: "/visits/new"},
+            {title: "All", path: "/Visits"},
+            {title: "New", path: "/Visits/new"},
         ]
     },
     {
         title: "Reports/Analytics",
-        path: "/reports",
+        path: "/Reports",
         icon:  BsFileBarGraphFill ({size:20})
     },
     {
         title: "Settings/Administration",
-        path: "/settings",
+        path: "/Settings",
         icon:  BsGearFill ({size:20})
     },
     {
         title: "User Account",
-        path: "/account",
+        path: "/Account",
         icon:  BsPersonFill ({size:20})
     },
     {
         title: "Help/Support",
-        path: "/help",
+        path: "/Support",
         icon:  BsQuestionCircleFill ({size:20})
     },
 ]
