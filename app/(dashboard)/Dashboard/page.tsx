@@ -1,9 +1,20 @@
-import Image from "next/image";
+import { options } from "@/app/api/auth/[...nextauth]/options";
+import { getServerSession } from "next-auth/next";
+import { redirect } from "next/navigation";
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(options);
+
+  if (!session) {
+    redirect("/api/auth/signin?callbackUrl=/server");
+  }
+
   return (
     <>
-    <h2>Dashboard</h2>
+      {/* <section className="flex flex-col gap-6">
+        <UserCard user={session?.user} pagetype={"Server"} />
+      </section> */}
+      <h2>Dashboard</h2>
     </>
-    );
+  );
 }

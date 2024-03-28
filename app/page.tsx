@@ -1,9 +1,17 @@
-import Image from "next/image";
+import { options } from "./api/auth/[...nextauth]/options"
+import { getServerSession } from "next-auth/next"
 
-export default function Home() {
+export default async function Home() {
+  const session = await getServerSession(options)
+
   return (
     <>
-    <h2>Home</h2>
+    {session ? (
+        // <UserCard user={session?.user} pagetype={"Home"} />
+        <h2>Home - Session</h2>
+      ) : (
+    <h2>Home - No session</h2>
+    )}
     </>
     );
 }
