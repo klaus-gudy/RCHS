@@ -1,5 +1,3 @@
-import { SIDENAV_ITEMS } from "./SIDEBAR_CONSTANTS";
-
 // Without a defined matcher, this one line applies next-auth 
 // to the entire project
 export { default } from "next-auth/middleware"
