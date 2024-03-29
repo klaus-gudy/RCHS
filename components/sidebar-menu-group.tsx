@@ -18,7 +18,7 @@ const SideBarMenuGroup = ({ menuGroup }: { menuGroup: SideNavItemGroup }) => {
             <h3 className={menuGroupTitleSyle}>{!toggleCollapse ? menuGroup.title : '...'}</h3>
             {
                 menuGroup.menuList?.map((item: SideNavItem, index: React.Key | null | undefined) => {
-                    return <SideBarMenuItem key={index} item={item} toggleCollapse={false} />
+                    return <SideBarMenuItem key={index} item={item}/>
                 })
             }
         </>
