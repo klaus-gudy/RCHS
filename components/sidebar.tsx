@@ -1,9 +1,9 @@
-import { SIDENAV_ITEMS } from "@/SIDEBAR_CONSTANTS";
 import Image from "next/image";
-import { SideBarMenuItem } from "./sidebar-menu-item";
 import classNames from "classnames";
 import { useEffect, useState } from "react";
 import { useSideBarToggle } from "@/hooks/use-sidebar-toggle";
+import SideBarMenuGroup from "./sidebar-menu-group";
+import { SIDENAV_ITEMS } from "@/app/(Dashboard)/menu_constants";
 
 export const SideBar = () => {
   const [mounted, setMounted] = useState(false);
@@ -33,19 +33,13 @@ export const SideBar = () => {
           <h3 className="pl-2 font-bold text-2xl">RCHS System</h3>
         )}
       </div>
-      <nav className="flex flex-col gap-2 transition duration-300">
-        <div className="flex flex-col gap-2 px-4">
-          {SIDENAV_ITEMS.map((item, index) => {
-            return (
-              <SideBarMenuItem
-                key={index}
-                item={item}
-                toggleCollapse={toggleCollapse}
-              />
-            );
-          })}
-        </div>
-      </nav>
+      <nav className="flex flex-col gap-2 transition duration-300 ease-in-out">
+                <div className="flex flex-col gap-2 px-4">
+                    {SIDENAV_ITEMS.map((item, idx) => {
+                        return <SideBarMenuGroup key={idx} menuGroup={item} />;
+                    })}
+                </div>
+            </nav>
     </aside>
   );
 };
