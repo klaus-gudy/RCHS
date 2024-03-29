@@ -9,11 +9,13 @@ export const SideBar = () => {
   const [mounted, setMounted] = useState(false);
   const { toggleCollapse } = useSideBarToggle();
 
-  const asideStyle = classNames("sidebar overflow-y-auto overflow-x-auto fixed bg-sidebar h-full shadow-sm shadow-slate-500/40 transition duration-300 ease-in-out z-[99999]",
-      {
-          ["w-[20rem]"]: !toggleCollapse,
-          ["sm:w-[5.4rem] sm:left-0 left-[-100%]"]: toggleCollapse,
-      });
+  const asideStyle = classNames(
+    "sidebar overflow-y-auto overflow-x-auto fixed bg-sidebar h-full shadow-sm shadow-slate-500/40 transition duration-300 ease-in-out z-[99999]",
+    {
+      ["w-[20rem]"]: !toggleCollapse,
+      ["sm:w-[5.4rem] sm:left-0 left-[-100%]"]: toggleCollapse,
+    }
+  );
 
   useEffect(() => setMounted(true), []);
 
@@ -35,11 +37,15 @@ export const SideBar = () => {
         <div className="flex flex-col gap-2 px-4">
           {SIDENAV_ITEMS.map((item, index) => {
             return (
-              <SideBarMenuItem key={index} item={item} toggleCollapse={toggleCollapse} />
+              <SideBarMenuItem
+                key={index}
+                item={item}
+                toggleCollapse={toggleCollapse}
+              />
             );
           })}
         </div>
       </nav>
     </aside>
   );
-}
+};
