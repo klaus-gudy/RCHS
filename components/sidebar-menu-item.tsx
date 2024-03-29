@@ -13,7 +13,7 @@ export const SideBarMenuItem = ({
   toggleCollapse: boolean;
 }) => {
   const linkStyle =
-    "flex items-center min-h-[40px] h-full text-gray-200  py-2 px-4 hover:text-gray-800 rounded-md transition duration-200";
+    "flex items-center min-h-[40px] h-full text-gray-800  py-2 px-4 hover:text-gray-400 rounded-md transition duration-200";
   const activelinkStyle =
     "rounded-md text-white light:text-black light:bg-[#efefef] bg-blue-400";
   const ddlinkStyle = linkStyle;

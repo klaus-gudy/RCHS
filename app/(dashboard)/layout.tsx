@@ -1,18 +1,15 @@
 'use client'
-// import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Karla } from 'next/font/google'
 import "./dashboard.css";
-import Sidebar from "@/components/sidebar";
+import { SideBar } from "@/components/sidebar";
 import PageWrapper from "@/components/pagewrapper";
 import Header from "@/components/header";
-import { useState } from "react";
 
-const inter = Inter({ subsets: ["latin"] });
-
-// export const metadata: Metadata = {
-//   title: "RCHS System",
-//   description: "Reproductive Child Health Sservices System",
-// };
+const karla = Karla({
+  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  subsets: ['latin'],
+  variable: "--font-karla"
+});
 
 export default function DashboardLayout({
   children,
@@ -20,14 +17,13 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
 
-  const [toggleCollapse, setToggleCollapse] = useState(false);
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={karla.className}>
         <div className="flex min-h-screen">
-        <Sidebar toggleCollapse={toggleCollapse}></Sidebar>
-        <Header toggleCollapse={toggleCollapse} setToggleCollapse={setToggleCollapse}></Header>
-        <PageWrapper toggleCollapse={toggleCollapse}>{children}</PageWrapper>
+        <SideBar/>
+        <Header/>
+        <PageWrapper children={children}/>
         </div>
       </body>
     </html>
