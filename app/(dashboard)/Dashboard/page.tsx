@@ -1,4 +1,5 @@
 import { options } from "@/app/api/auth/[...nextauth]/options";
+import { Overview } from "@/app/components/overview";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
@@ -116,6 +117,27 @@ export default async function Dashboard() {
               <p className="text-xs text-muted-foreground">
                 +201 since last hour
               </p>
+            </CardContent>
+          </Card>
+        </div>
+        <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-7">
+          <Card className="lg:col-span-4">
+            <CardHeader>
+              <CardTitle>Overview</CardTitle>
+            </CardHeader>
+            <CardContent className="pl-2">
+              <Overview />
+            </CardContent>
+          </Card>
+          <Card className="lg:col-span-3">
+            <CardHeader>
+              <CardTitle>Recent Sales</CardTitle>
+              <CardDescription>
+                You made 265 sales this month.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {/* <RecentSales /> */}
             </CardContent>
           </Card>
         </div>
