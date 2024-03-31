@@ -17,13 +17,15 @@ export default function DashboardLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={karla.className}>
-        <div className="flex min-h-screen">
+    <html lang="en" suppressHydrationWarning>
+      <body className={karla.className + " h-screen overflow-hidden"}>
+        <>
           <SideBar />
-          <Header />
-          <PageWrapper children={children} />
-        </div>
+          <div className="flex flex-col h-full w-full">
+            <Header />
+            <PageWrapper children={children} />
+          </div>
+        </>
       </body>
     </html>
   );
