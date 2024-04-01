@@ -9,7 +9,7 @@ export default function Header() {
   const sidebarToggle = () => {
       invokeToggleCollapse();
   }
-  const headerStyle = classNames("bg-sidebar fixed w-full z-[99997] px-4 shadow-sm shadow-slate-500/40",
+  const headerStyle = classNames("bg-sidebar fixed w-full z-[99999] px-4 shadow-sm shadow-slate-500/40",
       {
           ["sm:pl-[20rem]"]: !toggleCollapse,
           ["sm:pl-[5.6rem]"]: toggleCollapse,

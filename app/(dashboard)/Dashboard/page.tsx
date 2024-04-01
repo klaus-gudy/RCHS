@@ -1,5 +1,6 @@
 import { options } from "@/app/api/auth/[...nextauth]/options";
 import { Overview } from "@/app/components/overview";
+import { RecentSales } from "@/app/components/recent-sales";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "@/components/ui/card";
 import { getServerSession } from "next-auth/next";
 import { redirect } from "next/navigation";
@@ -137,7 +138,7 @@ export default async function Dashboard() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              {/* <RecentSales /> */}
+              <RecentSales />
             </CardContent>
           </Card>
         </div>
