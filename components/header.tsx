@@ -2,6 +2,7 @@ import { useSideBarToggle } from "@/hooks/use-sidebar-toggle";
 import classNames from "classnames";
 import { Dispatch, SetStateAction } from "react";
 import { BsList } from "react-icons/bs";
+import { UserNav } from "./usernav";
 
 export default function Header() {
 
@@ -21,7 +22,7 @@ export default function Header() {
           <BsList></BsList>
         </button>
         <div className="order-1 sm:order-2 h-10 w-10 rounded-full bg-[#6ca2ff] flex items-center justify-center text-center">
-          <span className="font-semibold text-sm">GM</span>
+          <UserNav/>
         </div>
       </div>
     </header>
