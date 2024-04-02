@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { UserAuthForm } from "@/app/components/user-auth-form";
+import { RegisterForm } from "@/app/components/register-form";
 import { buttonVariants } from "@/components/ui/button";
 
 const Register = () => {
@@ -43,7 +43,7 @@ const Register = () => {
                 Enter the below details to create your account
               </p>
             </div>
-            <UserAuthForm />
+            <RegisterForm />
           </div>
         </div>
       </div>

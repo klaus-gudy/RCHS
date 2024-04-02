@@ -1,15 +1,13 @@
-"use client"
 import * as React from "react"
-
 import { cn } from "@/lib/utils"
 import { Label } from "@/registry/new-york/ui/label"
 import { Button } from "@/registry/new-york/ui/button"
 import { Input } from "@/registry/new-york/ui/input"
 import { Icons } from "./icons"
 
-interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface RegisterFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
-export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
+export function RegisterForm({ className, ...props }: RegisterFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
 
   function onSubmit(event: React.SyntheticEvent) {
@@ -47,7 +45,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               id="password"
               placeholder="Password"
               type="password"
-              autoComplete="current-password"
+              autoComplete="new-password"
               disabled={isLoading}
             />
           </div>
@@ -56,10 +54,10 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               First Name
             </Label>
             <Input
-              id="fullName"
+              id="firstName"
               placeholder="First Name"
               type="text"
-              autoComplete="name"
+              autoComplete="given-name"
               autoCorrect="off"
               disabled={isLoading}
             />
@@ -69,10 +67,10 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               Middle Name
             </Label>
             <Input
-              id="fullName"
+              id="middleName"
               placeholder="Middle Name"
               type="text"
-              autoComplete="name"
+              autoComplete="additional-name"
               autoCorrect="off"
               disabled={isLoading}
             />
@@ -82,10 +80,10 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               Last Name
             </Label>
             <Input
-              id="fullName"
+              id="lastName"
               placeholder="Last Name"
               type="text"
-              autoComplete="name"
+              autoComplete="family-name"
               autoCorrect="off"
               disabled={isLoading}
             />
