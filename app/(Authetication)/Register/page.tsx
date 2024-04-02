@@ -10,15 +10,15 @@ const Register = () => {
   return (
     <div className="h-[1000px]">
       <div className="container relative hidden h-full flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
-        {/* <Link
-          href="/examples/authentication"
+        <Link
+          href="/Login"
           className={cn(
-            buttonVariants({ variant: "ghost" }),
+            buttonVariants({ variant: "default" }),
             "absolute right-4 top-4 md:right-8 md:top-8"
           )}
         >
           Login
-        </Link> */}
+        </Link>
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
           <div className="absolute inset-0 bg-[#0474ed]" />
           <div className="relative z-20 flex items-center text-lg font-medium">
@@ -27,7 +27,7 @@ const Register = () => {
               src="/logo-white.png"
               className="w-12 mx-3.5 min-h-fit"
               width={25}
-              height={25}
+              height={25}                           
             ></Image>
             RCHS System
           </div>
@@ -44,23 +44,6 @@ const Register = () => {
               </p>
             </div>
             <UserAuthForm />
-            {/* <p className="px-8 text-center text-sm text-muted-foreground">
-              By clicking continue, you agree to our{" "}
-              <Link
-                href="/terms"
-                className="underline underline-offset-4 hover:text-primary"
-              >
-                Terms of Service
-              </Link>{" "}
-              and{" "}
-              <Link
-                href="/privacy"
-                className="underline underline-offset-4 hover:text-primary"
-              >
-                Privacy Policy
-              </Link>
-              .
-            </p> */}
           </div>
         </div>
       </div>
