@@ -1,6 +1,5 @@
 import { useSideBarToggle } from "@/hooks/use-sidebar-toggle";
 import classNames from "classnames";
-import { Dispatch, SetStateAction } from "react";
 import { BsList } from "react-icons/bs";
 import { UserNav } from "./usernav";
 
