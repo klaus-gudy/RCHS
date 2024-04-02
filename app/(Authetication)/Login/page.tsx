@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { RegisterForm } from "@/app/components/register-form";
 import { buttonVariants } from "@/components/ui/button";
+import { LoginForm } from "@/app/components/login-form";
 
 const Login = () => {
   return (
@@ -42,7 +42,7 @@ const Login = () => {
                 Enter your credentials to access your account
               </p>
             </div>
-            <RegisterForm />
+            <LoginForm />
           </div>
         </div>
       </div>

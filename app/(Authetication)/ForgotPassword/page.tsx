@@ -2,8 +2,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { RegisterForm } from "@/app/components/register-form";
 import { buttonVariants } from "@/components/ui/button";
+import { ForgotPasswordForm } from "@/app/components/forgot-password-form";
 
 const ForgotPassword = () => {
   return (
@@ -42,7 +42,7 @@ const ForgotPassword = () => {
                 Enter your email to reset your password
               </p>
             </div>
-            <RegisterForm />
+            <ForgotPasswordForm />
           </div>
         </div>
       </div>
