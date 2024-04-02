@@ -52,14 +52,14 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        sidebar:{
-          DEFAULT: "hsl(var(--sidebar))",
-          foreground: "hsl(var(--sidebar-foreground))",
-          muted:{
-            DEFAULT: "hsl(var(--sidebar-muted))",
-            foreground: "hsl(var(--sidebar-muted-foreground))",            
-          }
-        }
+        // sidebar:{
+        //   DEFAULT: "hsl(var(--sidebar))",
+        //   foreground: "hsl(var(--sidebar-foreground))",
+        //   muted:{
+        //     DEFAULT: "hsl(var(--sidebar-muted))",
+        //     foreground: "hsl(var(--sidebar-muted-foreground))",            
+        //   }
+        // }
       },
       borderRadius: {
         lg: "var(--radius)",
