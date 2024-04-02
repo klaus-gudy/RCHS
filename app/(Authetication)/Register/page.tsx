@@ -9,22 +9,6 @@ import { buttonVariants } from "@/components/ui/button";
 const Register = () => {
   return (
     <div className="h-[1000px]">
-      {/* <div className="md:hidden">
-        <Image
-          src="/examples/authentication-light.png"
-          width={1280}
-          height={843}
-          alt="Authentication"
-          className="block dark:hidden"
-        />
-        <Image
-          src="/examples/authentication-dark.png"
-          width={1280}
-          height={843}
-          alt="Authentication"
-          className="hidden dark:block"
-        />
-      </div> */}
       <div className="container relative hidden h-full flex-col items-center justify-center md:grid lg:max-w-none lg:grid-cols-2 lg:px-0">
         {/* <Link
           href="/examples/authentication"
@@ -56,7 +40,7 @@ const Register = () => {
                 Create an account
               </h1>
               <p className="text-sm text-muted-foreground">
-                Enter your email below to create your account
+                Enter the below details to create your account
               </p>
             </div>
             <UserAuthForm />
@@ -85,9 +69,3 @@ const Register = () => {
 };
 
 export default Register;
-
-// const RegisterNmame= ()=> {
-//     return <div>name</div>
-// }
-
-// export default RegisterNmame
