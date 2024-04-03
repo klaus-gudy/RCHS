@@ -126,7 +126,7 @@ export default async function Dashboard() {
           </Card>
         </div>
         <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-7">
-          <TableCard className="lg:col-span-3">
+          <TableCard className="lg:col-span-12 border-2">
             <TableCardHeader>
               <TableCardTitle>Recent Patients</TableCardTitle>
               <TableCardDescription>
