@@ -1,22 +1,23 @@
-import * as React from "react"
-import { cn } from "@/lib/utils"
-import { Label } from "@/registry/new-york/ui/label"
-import { Button } from "@/registry/new-york/ui/button"
-import { Input } from "@/registry/new-york/ui/input"
-import { Icons } from "./icons"
+import * as React from "react";
+import { cn } from "@/lib/utils";
+import { Label } from "@/registry/new-york/ui/label";
+import { Button } from "@/registry/new-york/ui/button";
+import { Input } from "@/registry/new-york/ui/input";
+import { Icons } from "./icons";
+// import Link from "next/link";
 
 interface LoginFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function LoginForm({ className, ...props }: LoginFormProps) {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false)
+  const [isLoading, setIsLoading] = React.useState<boolean>(false);
 
   function onSubmit(event: React.SyntheticEvent) {
-    event.preventDefault()
-    setIsLoading(true)
+    event.preventDefault();
+    setIsLoading(true);
 
     setTimeout(() => {
-      setIsLoading(false)
-    }, 3000)
+      setIsLoading(false);
+    }, 3000);
   }
 
   return (
@@ -61,7 +62,14 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
         <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
         </div>
+        <div className="text-center">
+          {/* <Link href="/ForgotPassword">
+            <a className="text-sm text-gray-600 hover:text-gray-900">
+              Forgot Password?
+            </a>
+          </Link> */}
+        </div>
       </div>
     </div>
-  )
+  );
 }

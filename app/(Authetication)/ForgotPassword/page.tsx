@@ -19,7 +19,7 @@ const ForgotPassword = () => {
           Back to Login
         </Link>
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
-          <div className="absolute inset-0 bg-[#0474ed]" />
+          <div className="absolute inset-0 bg-[#08a29e]" />
           <div className="relative z-20 flex items-center text-lg font-medium">
             <Image
               alt="RCHS System"
