@@ -35,7 +35,7 @@ export default async function Dashboard() {
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
-                Total Revenue
+                Total Children
               </CardTitle>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -51,15 +51,15 @@ export default async function Dashboard() {
               </svg>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">$45,231.89</div>
-              <p className="text-xs text-black">+20.1% from last month</p>
+              <div className="text-2xl font-bold">1,200</div>
+              <p className="text-xs text-black">+20.1% from last year</p>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
-                Subscriptions
+                Total Male
               </CardTitle>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,13 +77,13 @@ export default async function Dashboard() {
               </svg>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">+2350</div>
-              <p className="text-xs text-black">+180.1% from last month</p>
+              <div className="text-2xl font-bold">600</div>
+              <p className="text-xs text-black">+18.1% from last year</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Sales</CardTitle>
+              <CardTitle className="text-sm font-medium">Total Female</CardTitle>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -99,13 +99,13 @@ export default async function Dashboard() {
               </svg>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">+12,234</div>
-              <p className="text-xs text-black">+19% from last month</p>
+              <div className="text-2xl font-bold">800</div>
+              <p className="text-xs text-black">+10% from last year</p>
             </CardContent>
           </Card>
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-              <CardTitle className="text-sm font-medium">Active Now</CardTitle>
+              <CardTitle className="text-sm font-medium">Avarage Age</CardTitle>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -120,8 +120,8 @@ export default async function Dashboard() {
               </svg>
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold">+573</div>
-              <p className="text-xs text-black">+201 since last hour</p>
+              <div className="text-2xl font-bold">2.5</div>
+              <p className="text-xs text-black">+1 since last year</p>
             </CardContent>
           </Card>
         </div>
