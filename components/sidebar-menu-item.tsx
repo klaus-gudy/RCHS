@@ -24,9 +24,9 @@ export const SideBarMenuItem = ({ item }: { item: SideNavItem }) => {
         { ["justify-center"]: toggleCollapse }
     );
 
-    const activeLink = classNames("rounded-md text-white light:text-black light:bg-[#efefef] bg-blue-400 text-sidebar-muted-foreground bg-sidebar-muted");
+    const activeLink = classNames("rounded-md text-white light:text-black light:bg-[#efefef] bg-[#326164] text-sidebar-muted-foreground");
 
-    const navMenuDropdownItem = "text-red py-2 px-4 hover:text-sidebar-muted-foreground transition duration-200 rounded-md"
+    const navMenuDropdownItem = "text-black py-2 px-4 hover:text-white transition duration-200 rounded-md"
 
     const dropdownMenuHeaderLink = classNames(inactiveLink,
         {
