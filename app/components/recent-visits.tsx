@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import * as React from "react"
-import { ColumnDef } from "@tanstack/react-table"
-import { DataTable } from "@/components/ui/custom/data-table"
+import * as React from "react";
+import { ColumnDef } from "@tanstack/react-table";
+import { DataTable } from "@/components/ui/custom/data-table";
 
-// Define the type for child attendance data specific to RCHS
+// Defining the type for child attendance data specific to RCHS
 export type ChildAttendance = {
-  id: string
-  name: string
-  age: number
-  gender: string
-  weight: number
-  height: number
-  lastVisit: string
-}
+  id: string;
+  name: string;
+  age: number;
+  gender: string;
+  weight: number;
+  height: number;
+  lastVisit: string;
+};
 
 // Sample child attendance data (replace with real data)
 const childAttendanceData: ChildAttendance[] = [
@@ -125,41 +125,40 @@ const childAttendanceData: ChildAttendance[] = [
     height: 95,
     lastVisit: "2024-03-30",
   },
-
-]
+];
 
 // Define columns for child attendance data table
 export const columns: ColumnDef<ChildAttendance>[] = [
   {
     accessorKey: "name",
-    header: "Name"
+    header: "Name",
   },
   {
     accessorKey: "age",
-    header: "Age"
+    header: "Age",
   },
   {
     accessorKey: "gender",
-    header: "Gender"
+    header: "Gender",
   },
   {
     accessorKey: "weight",
-    header: "Weight (kg)"
+    header: "Weight (kg)",
   },
   {
     accessorKey: "height",
-    header: "Height (cm)"
+    header: "Height (cm)",
   },
   {
     accessorKey: "lastVisit",
-    header: "Last Visit Date"
+    header: "Last Visit Date",
   },
-]
+];
 
 export function RecentChildAttendance() {
   return (
     <div className="w-full">
       <DataTable data={childAttendanceData} columns={columns}></DataTable>
     </div>
-  )
+  );
 }
