@@ -3,6 +3,7 @@
 import * as React from "react";
 import { ColumnDef } from "@tanstack/react-table";
 import { DataTable } from "@/components/ui/custom/data-table";
+import { VisistsDataTable } from "@/components/ui/custom/visits-data-table";
 
 // Defining the type for child attendance data specific to RCHS
 export type ChildAttendance = {
@@ -158,7 +159,7 @@ export const columns: ColumnDef<ChildAttendance>[] = [
 export function RecentChildAttendance() {
   return (
     <div className="w-full">
-      <DataTable data={childAttendanceData} columns={columns}></DataTable>
+      <VisistsDataTable data={childAttendanceData} columns={columns}></VisistsDataTable>
     </div>
   );
 }
