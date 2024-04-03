@@ -6,30 +6,30 @@ import { Separator } from "@/registry/new-york/ui/separator"
 
 
 export const metadata: Metadata = {
-  title: "Forms",
-  description: "Advanced form example using react-hook-form and Zod.",
+  title: "Settings",
+  description: "Settings and Administration",
 }
 
 const sidebarNavItems = [
   {
     title: "Profile",
-    href: "/examples/forms",
+    href: "/Settings/Profile",
   },
   {
     title: "Account",
-    href: "/examples/forms/account",
+    href: "/Account",
   },
   {
     title: "Appearance",
-    href: "/examples/forms/appearance",
+    href: "/Settings/Appearance",
   },
   {
     title: "Notifications",
-    href: "/examples/forms/notifications",
+    href: "/Settings/Notifications",
   },
   {
     title: "Display",
-    href: "/examples/forms/display",
+    href: "/Settings/Display",
   },
 ]
 

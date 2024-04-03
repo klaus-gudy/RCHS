@@ -1,6 +1,7 @@
 import { Separator } from "@/registry/new-york/ui/separator"
 import { AppearanceForm } from "./appearance-form"
 
+
 export default function SettingsAppearancePage() {
   return (
     <div className="space-y-6">
