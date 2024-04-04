@@ -20,7 +20,8 @@ import {
 } from "@/components/ui/table";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -31,13 +32,12 @@ export function VisistsDataTable<TData, TValue>({
   data,
   columns,
 }: DataTableProps<TData, TValue>) {
-  const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>(
-    []
-  );
+  const router = useRouter ()
+  const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>( [] );
   const table = useReactTable({
     data,
     columns,
-    initialState: {
+    initialState: { 
       pagination: {
         pageIndex: 0,
         pageSize: 5,
@@ -51,12 +51,14 @@ export function VisistsDataTable<TData, TValue>({
       columnFilters,
     },
   });
-  const handleNewPatientRegistration = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    const router = useRouter();
-    e.preventDefault(); // Prevent default anchor link behavior
-    router.push('/Records');
-}
 
+
+  const handleNewPatientRegistration = (e: any) => { 
+    e.preventDefault()
+    console.log ('button nvjhvkvkjhlkjhnlk;jo i h;ih;hh;')
+    router.push('/Records')
+   }
+   
   return (
     <div className="w-full">
       <div className="flex items-center py-4">
@@ -69,9 +71,8 @@ export function VisistsDataTable<TData, TValue>({
           className="max-w-sm border border-[#a6cabd]"
         />
         <Button
-          variant="default"
-          onClick={(e) => handleNewPatientRegistration(e)}
-          className="fkex flex-col ml-2" // Add some margin to separate the button from the input
+          onClick={handleNewPatientRegistration}
+          className="flex flex-col ml-2" // Add some margin to separate the button from the input
         >
           Register New Patient
         </Button>

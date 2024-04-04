@@ -1,5 +1,4 @@
 import { options } from "@/app/api/auth/[...nextauth]/options";
-import { RecentSales } from "@/app/components/recent-sales";
 import { RecentChildAttendance } from "@/app/components/recent-visits";
 import {
   Card,
@@ -125,18 +124,6 @@ export default async function Dashboard() {
           </Card>
         </div>
         <div className="grid gap-4 sm:grid-cols-1 lg:grid-cols-7">
-          <TableCard className="lg:col-span-12 border-2">
-            <TableCardHeader>
-              <TableCardTitle>Recent Patients</TableCardTitle>
-              <TableCardDescription>
-                256 Patients Attended this month
-              </TableCardDescription>
-            </TableCardHeader>
-            <TableCardContent>
-              {/* <RecentChildAttendance /> */}
-              <RecentSales/>
-            </TableCardContent>
-          </TableCard>
 
           <TableCard className="lg:col-span-12 border-2">
             <TableCardHeader>

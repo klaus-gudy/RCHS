@@ -1,9 +1,11 @@
+"use client"
 import * as React from "react";
 import { cn } from "@/lib/utils";
 import { Label } from "@/registry/new-york/ui/label";
 import { Button } from "@/registry/new-york/ui/button";
 import { Input } from "@/registry/new-york/ui/input";
 import { Icons } from "./icons";
+import Link from "next/link";
 // import Link from "next/link";
 
 interface LoginFormProps extends React.HTMLAttributes<HTMLDivElement> {}
@@ -59,15 +61,15 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
         </div>
       </form>
       <div className="relative">
-        <div className="absolute inset-0 flex items-center">
+        {/* <div className="absolute inset-0 flex items-center">
           <span className="w-full border-t" />
-        </div>
-        <div className="text-center">
-          {/* <Link href="/ForgotPassword">
-            <a className="text-sm text-gray-600 hover:text-gray-900">
+        </div> */}
+        <div className=" flex justify-center text-sm text-gray-600 hover:text-gray-900">
+          <Link href="/ForgotPassword">
+            {/* <a className="text-sm text-gray-600 hover:text-gray-900"> */}
               Forgot Password?
-            </a>
-          </Link> */}
+            {/* </a> */}
+          </Link>
         </div>
       </div>
     </div>
