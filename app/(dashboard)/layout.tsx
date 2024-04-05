@@ -4,6 +4,8 @@ import "./dashboard.css";
 import { SideBar } from "@/components/sidebar";
 import PageWrapper from "@/components/pagewrapper";
 import Header from "@/components/header";
+import "@mantine/core/styles.css";
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 
 const karla = Karla({
   weight: ["200", "300", "400", "500", "600", "700", "800"],
@@ -18,14 +20,17 @@ export default function DashboardLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <ColorSchemeScript />
+      </head>
       <body className={karla.className + " h-screen overflow-hidden"}>
-        <>
+        <MantineProvider>
           <SideBar />
           <div className="flex flex-col h-full w-full">
             <Header />
             <PageWrapper children={children} />
           </div>
-        </>
+        </MantineProvider>
       </body>
     </html>
   );
