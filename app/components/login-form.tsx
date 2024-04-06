@@ -6,19 +6,22 @@ import { Button } from "@/registry/new-york/ui/button";
 import { Input } from "@/registry/new-york/ui/input";
 import { Icons } from "./icons";
 import Link from "next/link";
+// import { useRouter } from "next/router";
 // import Link from "next/link";
 
 interface LoginFormProps extends React.HTMLAttributes<HTMLDivElement> {}
 
 export function LoginForm({ className, ...props }: LoginFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
-
+  // const router = useRouter()
+  
   function onSubmit(event: React.SyntheticEvent) {
     event.preventDefault();
     setIsLoading(true);
 
     setTimeout(() => {
       setIsLoading(false);
+      // router.push("/Dashboard");
     }, 3000);
   }
 
@@ -52,7 +55,7 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
               disabled={isLoading}
             />
           </div>
-          <Button disabled={isLoading}>
+          <Button type="submit" disabled={isLoading}>
             {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}

@@ -23,9 +23,9 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <MantineProvider>
-          <AuthProvider>{children}</AuthProvider>
-        </MantineProvider>
+        <AuthProvider>
+          <MantineProvider>{children}</MantineProvider>
+        </AuthProvider>
       </body>
     </html>
   );
