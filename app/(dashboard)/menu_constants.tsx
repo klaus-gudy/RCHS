@@ -7,6 +7,7 @@ import {
   BsHouseDoorFill,
   BsPersonFill,
   BsQuestionCircleFill,
+  BsShieldFillCheck,
 } from "react-icons/bs";
 
 export const SIDENAV_ITEMS: SideNavItemGroup[] = [
@@ -47,6 +48,11 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
         title: "Reports/Analytics",
         path: "/Reports",
         icon: BsFileBarGraphFill({ size: 20 }),
+      },
+      {
+        title: "Immunisation",
+        path: "/Immunisation",
+        icon: BsShieldFillCheck({ size: 20 }),
       },
     ],
   },
