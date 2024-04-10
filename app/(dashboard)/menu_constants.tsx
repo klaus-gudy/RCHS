@@ -1,60 +1,73 @@
 import { SideNavItemGroup } from "@/types/types";
-import { BsCalendarFill, BsFileBarGraphFill, BsFillPersonLinesFill, BsGearFill, BsHouseDoorFill, BsPersonFill, BsQuestionCircleFill } from "react-icons/bs";
+import {
+  BsCalendarFill,
+  BsFileBarGraphFill,
+  BsFillPersonLinesFill,
+  BsGearFill,
+  BsHouseDoorFill,
+  BsPersonFill,
+  BsQuestionCircleFill,
+} from "react-icons/bs";
 
 export const SIDENAV_ITEMS: SideNavItemGroup[] = [
-
-    {
-        title: "Dashboards",
-        menuList: [{
-            title: 'Dashboard',
-            path: '/Dashboard',
-            icon: <BsHouseDoorFill size={20} />,
-        }]
-    },
-    {
-        title: "Manage",
-        menuList: [
-            {
-                title: "Patient Records",
-                path: "/Records",
-                icon:  BsFillPersonLinesFill ({size:20}),
-                submenu: true,
-                subMenuItems: [
-                    {title: "Children", path: "/Records/Child"},
-                    {title: "Parent", path: "/Records/Mother"},
-                ]
-            },
-            {
-                title: "Hospital Visits",
-                path: "/Visits",
-                icon:  BsCalendarFill ({size:20}),
-            },
-            {
-                title: "Reports/Analytics",
-                path: "/Reports",
-                icon:  BsFileBarGraphFill ({size:20})
-            },
-        ]
-    },
-    {
-        title: "Others",
-        menuList: [
-            {
-                title: "Settings/Administration",
-                path: "/Settings",
-                icon:  BsGearFill ({size:20})
-            },
-            {
-                title: "User Account",
-                path: "/Account",
-                icon:  BsPersonFill ({size:20})
-            },
-            {
-                title: "Help/Support",
-                path: "/Support",
-                icon:  BsQuestionCircleFill ({size:20})
-            },
-        ]
-    }
-
+  {
+    title: "Dashboards",
+    menuList: [
+      {
+        title: "Dashboard",
+        path: "/Dashboard",
+        icon: <BsHouseDoorFill size={20} />,
+      },
+    ],
+  },
+  {
+    title: "Manage",
+    menuList: [
+      {
+        title: "Patient Records",
+        path: "/Records",
+        icon: BsFillPersonLinesFill({ size: 20 }),
+        submenu: true,
+        subMenuItems: [
+          { title: "Children", path: "/Records/Child" },
+          { title: "Parent", path: "/Records/Mother" },
+        ],
+      },
+      {
+        title: "Hospital Visits",
+        path: "/Visits",
+        icon: BsCalendarFill({ size: 20 }),
+        submenu: true,
+        subMenuItems: [
+          { title: "Before Card", path: "/Visits/BeforeCard" },
+          { title: "After Card", path: "/Visits/AfterCard" },
+        ],
+      },
+      {
+        title: "Reports/Analytics",
+        path: "/Reports",
+        icon: BsFileBarGraphFill({ size: 20 }),
+      },
+    ],
+  },
+  {
+    title: "Others",
+    menuList: [
+      {
+        title: "Settings/Administration",
+        path: "/Settings",
+        icon: BsGearFill({ size: 20 }),
+      },
+      {
+        title: "User Account",
+        path: "/Account",
+        icon: BsPersonFill({ size: 20 }),
+      },
+      {
+        title: "Help/Support",
+        path: "/Support",
+        icon: BsQuestionCircleFill({ size: 20 }),
+      },
+    ],
+  },
 ];

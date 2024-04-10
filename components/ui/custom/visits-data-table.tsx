@@ -55,8 +55,11 @@ export function VisistsDataTable<TData, TValue>({
 
   const handleNewPatientRegistration = (e: any) => { 
     e.preventDefault()
-    console.log ('button nvjhvkvkjhlkjhnlk;jo i h;ih;hh;')
     router.push('/Records')
+   }
+  const handleNewVisistRegistration = (e: any) => { 
+    e.preventDefault()
+    router.push('/Visits')
    }
    
   return (
@@ -75,6 +78,12 @@ export function VisistsDataTable<TData, TValue>({
           className="flex flex-col ml-2" // Add some margin to separate the button from the input
         >
           Register New Patient
+        </Button>
+        <Button
+          onClick={handleNewVisistRegistration}
+          className="flex flex-col ml-2" // Add some margin to separate the button from the input
+        >
+          Register New Visit
         </Button>
       </div>
       <div className="rounded-md border border-[#a6cabd]">
