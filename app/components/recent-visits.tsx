@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { ColumnDef } from "@tanstack/react-table";
-import { DataTable } from "@/components/ui/custom/data-table";
+// import { DataTable } from "@/components/ui/custom/data-table";
 import { VisistsDataTable } from "@/components/ui/custom/visits-data-table";
 
 // Defining the type for child attendance data specific to RCHS

@@ -17,17 +17,17 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
             {
                 title: "Patient Records",
                 path: "/Records",
-                icon:  BsFillPersonLinesFill ({size:20})
+                icon:  BsFillPersonLinesFill ({size:20}),
+                submenu: true,
+                subMenuItems: [
+                    {title: "Children", path: "/Records/Child"},
+                    {title: "Parent", path: "/Records/Mother"},
+                ]
             },
             {
                 title: "Hospital Visits",
                 path: "/Visits",
                 icon:  BsCalendarFill ({size:20}),
-                submenu: true,
-                subMenuItems: [
-                    {title: "All", path: "/Visits"},
-                    {title: "New", path: "/Visits/new"},
-                ]
             },
             {
                 title: "Reports/Analytics",
