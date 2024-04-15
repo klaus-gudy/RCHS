@@ -1,14 +1,9 @@
 // This is where we aetup providers like github provoders or credentials provoders
 import type { NextAuthOptions } from "next-auth";
-import GitHubProvider from 'next-auth/providers/github'
 import CredentialsProvider from 'next-auth/providers/credentials'
 
 export const options: NextAuthOptions = {
     providers: [
-        GitHubProvider({
-            clientId: process.env.GITHUB_ID as string,
-            clientSecret: process.env.GITHUB_SECRET as string,
-        }),
         CredentialsProvider({
             name: "Credentials",
             credentials: {
@@ -37,4 +32,19 @@ export const options: NextAuthOptions = {
             }
         })
     ],
+    // pages: {
+    //     signIn: '/Login',
+    //     // signOut: '/auth/signout',
+    //     // error: '/auth/error',
+    //     // verifyRequest: '/auth/verify-request',
+    //     // newUser: '/auth/new-user'
+    //   },
+    //   events: {
+    //     async signIn(message) { /* on successful sign in */ },
+    //     // async signOut(message) { /* on signout */ },
+    //     // async createUser(message) { /* user created */ },
+    //     // async updateUser(message) { /* user updated - e.g. their email was verified */ },
+    //     // async linkAccount(message) { /* account (e.g. Twitter) linked to a user */ },
+    //     // async session(message) { /* session is active */ },
+    //   }
 }

@@ -55,11 +55,11 @@ export function VisistsDataTable<TData, TValue>({
 
   const handleNewPatientRegistration = (e: any) => { 
     e.preventDefault()
-    router.push('/Records')
+    router.push('/Records/Child')
    }
   const handleNewVisistRegistration = (e: any) => { 
     e.preventDefault()
-    router.push('/Visits')
+    router.push('/Visits/BeforeCard')
    }
    
   return (
