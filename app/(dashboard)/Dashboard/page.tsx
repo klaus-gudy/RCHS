@@ -21,8 +21,7 @@ export default async function Dashboard() {
   const session = await getServerSession(options);
 
   if (!session) {
-    // redirect("/api/auth/signin?callbackUrl=/Dashboard");
-    redirect("/Login?callbackUrl=/Dashboard");
+    redirect("/api/auth/signin?callbackUrl=/Dashboard");
   }
 
   return (
