@@ -4,6 +4,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { LoginForm } from "@/app/components/login-form";
+import { signIn } from "next-auth/react";
 
 const Login = () => {
   return (
