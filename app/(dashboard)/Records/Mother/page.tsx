@@ -1,68 +1,124 @@
 "use client"
+import { useState } from "react";
 import React from "react";
-import { Form, Input, Button, Select } from "antd";
+import axios from "axios";
+import { Input, Button, Select } from "antd";
 
 const { Option } = Select;
 
 const MotherDetailsForm: React.FC = () => {
-  const onFinish = (values: any) => {
-    console.log("Mother Details Form values:", values);
-  };
+
+    // State variables to store form values
+    const [formValues, setFormValues] = useState({
+      healthcare_centre_name: "",
+      registration_number: "",
+      mosquito_net_voucher_number: "",
+      mother_name: "",
+      mother_age: "",
+      mother_education: "",
+      mother_employment: "",
+      Height: "56",
+      partner_name: "",
+      partner_age: "",
+      partner_work: "",
+      partner_education: "",
+      address: "",
+      chairperson_name: "",
+      pregnancies: "",
+      births: "",
+      alive_children: "",
+      miscarrimother_ages: "",
+      miscarrimother_age_year: "",
+      miscarrimother_age_mother_age: "",
+    });
+  
+    // Handler for input change
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+      const { id, value } = e.target;
+      setFormValues({ ...formValues, [id]: value });
+    };
+  
+    // Handler for select change
+    const handleSelectChange = (value: string) => {
+      setFormValues({ ...formValues, Height: value });
+    };
+  
+    // Handler for form submission
+    const onFinish = async () => {
+      try {
+        console.log(formValues);
+        
+        const response = await axios.post('http://127.0.0.1:8000/mother/', formValues);
+        console.log("Response:", response.data); // Log the response from the server
+      } catch (error) {
+        console.error("Error:", error); // Log any errors that occur during the request
+      }
+    };
+  
+
+  // const onFinish = async (values: any) => {
+  //   try {
+  //     const response = await axios.post('http://127.0.0.1:8000/mother/', values);
+  //     console.log("Response:", response.data); // Log the response from the server
+  //   } catch (error) {
+  //     console.error("Error:", error); // Log any errors that occur during the request
+  //   }
+  // };
 
   return (
     <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md border border-blue-400 min-w-full">
       <h2 className="text-lg font-semibold text-gray-700 capitalize">
         Mother(Parent/Guardian) Registration Form
       </h2>
-      <form onSubmit={onFinish} className="mt-4 space-y-6">
+      {/* <form onSubmit={onFinish} className="mt-4 space-y-6"> */}
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
           <div>
             <label htmlFor="healthcare_centre_name" className="text-gray-700">
               Healthcare Centre Name
             </label>
-            <Input id="healthcare_centre_name" />
+            <Input id="healthcare_centre_name" onChange={handleInputChange} value={formValues.healthcare_centre_name}  />
           </div>
 
           <div>
             <label htmlFor="registration_number" className="text-gray-700">
               Registration Number
             </label>
-            <Input id="registration_number" />
+            <Input id="registration_number" onChange={handleInputChange} value={formValues.registration_number}/>
           </div>
 
           <div>
             <label htmlFor="mosquito_net_voucher_number" className="text-gray-700">
               Mosquito Net Voucher Number
             </label>
-            <Input id="mosquito_net_voucher_number" />
+            <Input id="mosquito_net_voucher_number" onChange={handleInputChange} value={formValues.mosquito_net_voucher_number}/>
           </div>
 
           <div>
             <label htmlFor="mother_name" className="text-gray-700">
               Mother's Name
             </label>
-            <Input id="mother_name" />
+            <Input id="mother_name" onChange={handleInputChange} value={formValues.mother_name}/>
           </div>
 
           <div>
-            <label htmlFor="age" className="text-gray-700">
-              Age
+            <label htmlFor="mother_age" className="text-gray-700">
+              mother_age
             </label>
-            <Input id="age" type="number" />
+            <Input id="mother_age" type="number" onChange={handleInputChange} value={formValues.mother_age}/>
           </div>
 
           <div>
-            <label htmlFor="education" className="text-gray-700">
-              Education
+            <label htmlFor="mother_education" className="text-gray-700">
+              mother_education
             </label>
-            <Input id="education" />
+            <Input id="mother_education" onChange={handleInputChange} value={formValues.mother_education} />
           </div>
 
           <div>
-            <label htmlFor="work_employment" className="text-gray-700">
+            <label htmlFor="mother_employment" className="text-gray-700">
               Work/Employment
             </label>
-            <Input id="work_employment" />
+            <Input id="mother_employment" onChange={handleInputChange} value={formValues.mother_employment} />
           </div>
 
           <div>
@@ -79,93 +135,93 @@ const MotherDetailsForm: React.FC = () => {
             <label htmlFor="partner_name" className="text-gray-700">
               Husband's/Partner's/Companion's Name
             </label>
-            <Input id="partner_name" />
+            <Input id="partner_name" onChange={handleInputChange} value={formValues.partner_name}/>
           </div>
 
           <div>
             <label htmlFor="partner_age" className="text-gray-700">
-              Age
+              mother_age
             </label>
-            <Input id="partner_age" type="number" />
+            <Input id="partner_age" type="number" onChange={handleInputChange} value={formValues.partner_age}/>
           </div>
 
           <div>
             <label htmlFor="partner_work" className="text-gray-700">
               Work
             </label>
-            <Input id="partner_work" />
+            <Input id="partner_work" onChange={handleInputChange} value={formValues.partner_work} />
           </div>
 
           <div>
             <label htmlFor="partner_education" className="text-gray-700">
-              Education
+              mother_education
             </label>
-            <Input id="partner_education" />
+            <Input id="partner_education" onChange={handleInputChange} value={formValues.partner_education} />
           </div>
 
           <div>
-            <label htmlFor="village_street_ward" className="text-gray-700">
-              Village/Street/Ward
+            <label htmlFor="address" className="text-gray-700">
+              Villmother_age/Street/Ward
             </label>
-            <Input id="village_street_ward" />
+            <Input id="address" onChange={handleInputChange} value={formValues.address} />
           </div>
 
           <div>
             <label htmlFor="chairperson_name" className="text-gray-700">
               Chairperson's Name
             </label>
-            <Input id="chairperson_name" />
+            <Input id="chairperson_name" onChange={handleInputChange} value={formValues.chairperson_name} />
           </div>
 
           <div>
             <label htmlFor="pregnancies" className="text-gray-700">
               How many pregnancies
             </label>
-            <Input id="pregnancies" type="number" />
+            <Input id="pregnancies" type="number" onChange={handleInputChange} value={formValues.pregnancies} />
           </div>
 
           <div>
             <label htmlFor="births" className="text-gray-700">
               How many times has she given birth
             </label>
-            <Input id="births" type="number" />
+            <Input id="births" type="number" onChange={handleInputChange} value={formValues.births} />
           </div>
 
           <div>
             <label htmlFor="alive_children" className="text-gray-700">
               Alive Children
             </label>
-            <Input id="alive_children" type="number" />
+            <Input id="alive_children" type="number" onChange={handleInputChange} value={formValues.alive_children} />
           </div>
 
           <div>
-            <label htmlFor="miscarriages" className="text-gray-700">
-              Miscarriages
+            <label htmlFor="miscarrimother_ages" className="text-gray-700">
+              Miscarrimother_ages
             </label>
-            <Input id="miscarriages" type="number" />
+            <Input id="miscarrimother_ages" type="number" onChange={handleInputChange} value={formValues.miscarrimother_ages} />
           </div>
 
           <div>
-            <label htmlFor="miscarriage_year" className="text-gray-700">
-              Miscarriage Year
+            <label htmlFor="miscarrimother_age_year" className="text-gray-700">
+              Miscarrimother_age Year
             </label>
-            <Input id="miscarriage_year" type="number" />
+            <Input id="miscarrimother_age_year" type="number" onChange={handleInputChange} value={formValues.miscarrimother_age_year} />
           </div>
 
           <div>
-            <label htmlFor="miscarriage_age" className="text-gray-700">
-              Miscarriage Age
+            <label htmlFor="miscarrimother_age_mother_age" className="text-gray-700">
+              Miscarrimother_age mother_age
             </label>
-            <Input id="miscarriage_age" type="number" />
+            <Input id="miscarrimother_age_mother_age" type="number" onChange={handleInputChange} value={formValues.miscarrimother_age_year} />
           </div>
         </div>
 
         <div className="flex justify-center mt-6">
-        <Button type="primary" htmlType="submit" className="bg-[#08a29e]">
+        <Button type="primary" onClick={onFinish} htmlType="submit" className="bg-[#08a29e]">
           Submit
         </Button>
         </div>
-      </form>
+      {/* </form> */}
     </section>
   );
 };
