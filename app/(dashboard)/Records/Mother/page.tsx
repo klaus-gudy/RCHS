@@ -23,7 +23,7 @@ const MotherDetailsForm: React.FC = () => {
       partner_work: "",
       partner_education: "",
       address: "",
-      chairperson_name: "",
+      Chairperson_name: "",
       pregnancies: "",
       births: "",
       alive_children: "",
@@ -54,6 +54,16 @@ const MotherDetailsForm: React.FC = () => {
         console.error("Error:", error); // Log any errors that occur during the request
       }
     };
+  
+
+  // const onFinish = async (values: any) => {
+  //   try {
+  //     const response = await axios.post('http://127.0.0.1:8000/mother/', values);
+  //     console.log("Response:", response.data); // Log the response from the server
+  //   } catch (error) {
+  //     console.error("Error:", error); // Log any errors that occur during the request
+  //   }
+  // };
 
   return (
     <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md border border-blue-400 min-w-full">
@@ -157,10 +167,10 @@ const MotherDetailsForm: React.FC = () => {
           </div>
 
           <div>
-            <label htmlFor="chairperson_name" className="text-gray-700">
+            <label htmlFor="Chairperson_name" className="text-gray-700">
               Chairperson's Name
             </label>
-            <Input id="chairperson_name" onChange={handleInputChange} value={formValues.chairperson_name} />
+            <Input id="Chairperson_name" onChange={handleInputChange} value={formValues.Chairperson_name} />
           </div>
 
           <div>
@@ -186,7 +196,7 @@ const MotherDetailsForm: React.FC = () => {
 
           <div>
             <label htmlFor="miscarrimother_ages" className="text-gray-700">
-              Miscarrimother_ages
+              miscarrimother_ages
             </label>
             <Input id="miscarrimother_ages" type="number" onChange={handleInputChange} value={formValues.miscarrimother_ages} />
           </div>
@@ -202,7 +212,7 @@ const MotherDetailsForm: React.FC = () => {
             <label htmlFor="miscarrimother_age_mother_age" className="text-gray-700">
               Miscarrimother_age mother_age
             </label>
-            <Input id="miscarrimother_age_mother_age" type="number" onChange={handleInputChange} value={formValues.miscarrimother_age_year} />
+            <Input id="miscarrimother_age_mother_age" type="number" onChange={handleInputChange} value={formValues.miscarrimother_age_mother_age} />
           </div>
         </div>
 
