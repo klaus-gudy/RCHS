@@ -151,7 +151,7 @@ const MotherDetailsForm: React.FC = () => {
 
           <div>
             <label htmlFor="address" className="text-gray-700">
-              Villmother_age/Street/Ward
+              Village/Street/Ward
             </label>
             <Input id="address" onChange={handleInputChange} value={formValues.address} />
           </div>
