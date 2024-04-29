@@ -53,6 +53,29 @@ const MotherDetailsForm: React.FC = () => {
         "http://127.0.0.1:8000/mother/",
         formValues
       );
+      // Clear form values after successful submission
+      setFormValues({
+        healthcare_centre_name: "",
+        registration_number: "",
+        mosquito_net_voucher_number: "",
+        mother_name: "",
+        mother_age: "",
+        mother_education: "",
+        mother_employment: "",
+        Height: "56",
+        partner_name: "",
+        partner_age: "",
+        partner_work: "",
+        partner_education: "",
+        address: "",
+        Chairperson_name: "",
+        pregnancies: "",
+        births: "",
+        alive_children: "",
+        miscarriages: "",
+        miscarriage_age: "",
+        miscarriage_year: "",
+      });
       console.log("Response:", response.data); // Log the response from the server
     } catch (error) {
       console.error("Error:", error); // Log any errors that occur during the request
