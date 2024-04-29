@@ -1,135 +1,191 @@
-"use client";
+"use client"
+import { useState } from "react";
+import { Input, Button, Select } from "antd";
+import axios from "axios";
 import React from "react";
-import { Form, Input, Select, Button, DatePicker } from "antd";
 
 const { Option } = Select;
 
 const ChildDetailsForm: React.FC = () => {
-  const onFinish = (values: any) => {
-    console.log("Child Details Form values:", values);
+  const [formValues, setFormValues] = useState({
+    healthcare_centre_name: "",
+    child_number: "",
+    child_name: "",
+    child_gender: "",
+    date_of_birth: "",
+    weight_at_birth: "",
+    length_at_birth: "",
+    place_of_birth: "",
+    maternal_health_worker: "",
+    child_residence: "",
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target;
+    setFormValues({ ...formValues, [id]: value });
+  };
+
+  const handleSelectChange = (value: string) => {
+    setFormValues({ ...formValues, child_gender: value });
+  };
+
+  const onFinish = async () => {
+    try {
+      console.log(formValues);
+      const response = await axios.post(
+        "http://127.0.0.1:8000/child/",
+        formValues
+      );
+      console.log("Response:", response.data);
+    } catch (error) {
+      console.error("Error:", error);
+    }
   };
 
   return (
-    <Form
-      name="child_details_form"
-      onFinish={onFinish}
-      className="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md min-w-full"
-    >
-      <h2 className="text-2xl font-semibold mb-6 text-center">
+    <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md border border-blue-400 min-w-full">
+      <h2 className="text-lg font-semibold text-gray-700 capitalize">
         Child Registration Form
       </h2>
-      <p className="font-semibold mb-6 text-center">
-        This form serves as a vital tool for capturing and storing essential
-        data about children. By providing accurate information, you contribute
-        to creating a comprehensive record that supports better healthcare
-        management and ensures the well-being of our youngest community members.
-      </p>
-      <Form.Item
-        label="Healthcare Centre Name"
-        name="health_centre_name"
-        rules={[
-          { required: true, message: "Please input healthcare centre name" },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="Child's Number"
-        name="child_number"
-        rules={[{ required: true, message: "Please input child number" }]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="Child's Name"
-        name="child_name"
-        rules={[{ required: true, message: "Please input child name" }]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="Child's Gender"
-        name="child_gender"
-        rules={[{ required: true, message: "Please select child gender" }]}
-      >
-        <Select>
-          <Option value="male">Male</Option>
-          <Option value="female">Female</Option>
-          <Option value="other">Other</Option>
-        </Select>
-      </Form.Item>
-      <Form.Item
-        label="Date of Birth"
-        name="date_of_birth"
-        rules={[{ required: true, message: "Please select date of birth" }]}
-      >
-        <DatePicker style={{ width: "100%" }} />
-      </Form.Item>
-      <Form.Item
-        label="Weight at Birth"
-        name="weight_at_birth"
-        rules={[{ required: true, message: "Please input weight at birth" }]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="Length at Birth"
-        name="length_at_birth"
-        rules={[{ required: true, message: "Please input length at birth" }]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="Place of Birth"
-        name="place_of_birth"
-        rules={[{ required: true, message: "Please input place of birth" }]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="Maternal Health Worker"
-        name="maternal_health_worker"
-        rules={[
-          { required: true, message: "Please select maternal health worker" },
-        ]}
-      >
-        <Select>
-          <Option value="healthcare_worker">Healthcare Worker</Option>
-          <Option value="tba">Traditional Birth Attendant (TBA)</Option>
-          <Option value="other">Other</Option>
-        </Select>
-      </Form.Item>
-      <Form.Item
-        label="Mother's Name/Guardian"
-        name="mother_name"
-        rules={[
-          { required: true, message: "Please input mother's name/guardian" },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="Father's Name/Guardian"
-        name="father_name"
-        rules={[
-          { required: true, message: "Please input father's name/guardian" },
-        ]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item
-        label="Child's Residence"
-        name="child_residence"
-        rules={[{ required: true, message: "Please input child residence" }]}
-      >
-        <Input />
-      </Form.Item>
-      <Form.Item className="text-center">
-        <Button type="primary" htmlType="submit" className="bg-[#08a29e]">
+      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+        <div>
+          <label htmlFor="healthcare_centre_name" className="text-gray-700">
+            Healthcare Centre Name
+          </label>
+          <Input
+            id="healthcare_centre_name"
+            onChange={handleInputChange}
+            value={formValues.healthcare_centre_name}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="child_number" className="text-gray-700">
+            Child's Number
+          </label>
+          <Input
+            id="child_number"
+            onChange={handleInputChange}
+            value={formValues.child_number}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="child_name" className="text-gray-700">
+            Child's Name
+          </label>
+          <Input
+            id="child_name"
+            onChange={handleInputChange}
+            value={formValues.child_name}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="child_gender" className="text-gray-700 block">
+            Child's Gender
+          </label>
+          <Select
+            id="child_gender"
+            placeholder="Select Gender"
+            className="w-full"
+            onChange={handleSelectChange}
+          >
+            <Option value="male">Male</Option>
+            <Option value="female">Female</Option>
+          </Select>
+        </div>
+
+        <div>
+          <label htmlFor="date_of_birth" className="text-gray-700">
+            Date of Birth
+          </label>
+          <Input
+            id="date_of_birth"
+            type="date"
+            onChange={handleInputChange}
+            value={formValues.date_of_birth}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="weight_at_birth" className="text-gray-700">
+            Weight at Birth
+          </label>
+          <Input
+            id="weight_at_birth"
+            type="number"
+            onChange={handleInputChange}
+            value={formValues.weight_at_birth}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="length_at_birth" className="text-gray-700">
+            Length at Birth
+          </label>
+          <Input
+            id="length_at_birth"
+            type="number"
+            onChange={handleInputChange}
+            value={formValues.length_at_birth}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="place_of_birth" className="text-gray-700">
+            Place of Birth
+          </label>
+          <Input
+            id="place_of_birth"
+            onChange={handleInputChange}
+            value={formValues.place_of_birth}
+          />
+        </div>
+
+        <div>
+          <label htmlFor="maternal_health_worker" className="text-gray-700 block">
+            Maternal Health Worker
+          </label>
+          <Select
+            id="maternal_health_worker"
+            placeholder="Select Worker"
+            className="w-full"
+            onChange={(value) =>
+              setFormValues({ ...formValues, maternal_health_worker: value })
+            }
+          >
+            <Option value="Healthcare Worker">Healthcare Worker</Option>
+            <Option value="Traditional Birth Attendant (TBA)">
+              Traditional Birth Attendant (TBA)
+            </Option>
+            <Option value="Others">Others</Option>
+          </Select>
+        </div>
+
+        <div>
+          <label htmlFor="child_residence" className="text-gray-700">
+            Child's Residence
+          </label>
+          <Input
+            id="child_residence"
+            onChange={handleInputChange}
+            value={formValues.child_residence}
+          />
+        </div>
+      </div>
+
+      <div className="flex justify-center mt-6">
+        <Button
+          type="primary"
+          onClick={onFinish}
+          htmlType="submit"
+          className="bg-[#08a29e]"
+        >
           Submit
         </Button>
-      </Form.Item>
-    </Form>
+      </div>
+    </section>
   );
 };
 

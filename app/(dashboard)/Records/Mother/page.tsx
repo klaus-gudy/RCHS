@@ -54,16 +54,6 @@ const MotherDetailsForm: React.FC = () => {
         console.error("Error:", error); // Log any errors that occur during the request
       }
     };
-  
-
-  // const onFinish = async (values: any) => {
-  //   try {
-  //     const response = await axios.post('http://127.0.0.1:8000/mother/', values);
-  //     console.log("Response:", response.data); // Log the response from the server
-  //   } catch (error) {
-  //     console.error("Error:", error); // Log any errors that occur during the request
-  //   }
-  // };
 
   return (
     <section className="max-w-4xl p-6 mx-auto bg-white rounded-md shadow-md border border-blue-400 min-w-full">
@@ -125,7 +115,7 @@ const MotherDetailsForm: React.FC = () => {
             <label htmlFor="Height" className="text-gray-700 block">
               Height
             </label>
-            <Select id="Height" placeholder="Select Height">
+            <Select id="Height" placeholder="Select Height" className="w-full">
               <Option value="above_150">Above 150 cm</Option>
               <Option value="below_150">Below 150 cm</Option>
             </Select>
