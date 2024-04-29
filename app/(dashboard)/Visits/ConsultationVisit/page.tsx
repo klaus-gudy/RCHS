@@ -115,7 +115,7 @@ const ClinicVisitForm: React.FC = () => {
           type="primary"
           onClick={onFinish}
           htmlType="submit"
-          className="bg-[#08a29e]"
+          className="bg-rchs"
         >
           Submit
         </Button>

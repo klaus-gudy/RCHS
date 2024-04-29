@@ -80,7 +80,7 @@ const ClinicVisitForm: React.FC = () => {
     try {
       console.log(formValues);
       const response = await axios.post(
-        "http://127.0.0.1:8000/clinic-visit-before-card/",
+        "http://127.0.0.1:8000/mother_visit/",
         formValues
       );
       console.log("Response:", response.data);
@@ -670,7 +670,7 @@ const ClinicVisitForm: React.FC = () => {
           type="primary"
           onClick={onFinish}
           htmlType="submit"
-          className="bg-[#08a29e]"
+          className="bg-rchs"
         >
           Submit
         </Button>
