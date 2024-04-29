@@ -10,7 +10,7 @@ export const SideBar = () => {
   const { toggleCollapse } = useSideBarToggle();
 
   const asideStyle = classNames(
-    "sidebar overflow-y-auto overflow-x-auto fixed bg-[#08a29e] h-full shadow-sm shadow-slate-500/40 transition duration-300 ease-in-out z-[99999]",
+    "sidebar overflow-y-auto overflow-x-auto fixed bg-rchs h-full shadow-sm shadow-slate-500/40 transition duration-300 ease-in-out z-[99999]",
     {
       ["w-[20rem]"]: !toggleCollapse,
       ["sm:w-[5.4rem] sm:left-0 left-[-100%]"]: toggleCollapse,

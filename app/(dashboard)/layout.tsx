@@ -24,13 +24,11 @@ export default function DashboardLayout({
         <ColorSchemeScript />
       </head>
       <body className={karla.className + " h-screen overflow-hidden"}>
-        <MantineProvider>
           <SideBar />
           <div className="flex flex-col h-full w-full">
             <Header />
             <PageWrapper children={children} />
           </div>
-        </MantineProvider>
       </body>
     </html>
   );

@@ -71,7 +71,7 @@ export function VisistsDataTable<TData, TValue>({
           onChange={(event) =>
             table.getColumn("name")?.setFilterValue(event.target.value)
           }
-          className="max-w-sm border border-[#a6cabd]"
+          className="max-w-sm border border-rchsLight"
         />
         <Button
           onClick={handleNewPatientRegistration}
@@ -86,7 +86,7 @@ export function VisistsDataTable<TData, TValue>({
           Register New Visit
         </Button>
       </div>
-      <div className="rounded-md border border-[#a6cabd]">
+      <div className="rounded-md border border-rchsLight">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (

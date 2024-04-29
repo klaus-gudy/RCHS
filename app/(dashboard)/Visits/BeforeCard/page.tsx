@@ -80,7 +80,7 @@ const ClinicVisitForm: React.FC = () => {
     try {
       console.log(formValues);
       const response = await axios.post(
-        "http://127.0.0.1:8000/clinic-visit/",
+        "http://127.0.0.1:8000/clinic-visit-before-card/",
         formValues
       );
       console.log("Response:", response.data);

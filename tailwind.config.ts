@@ -19,6 +19,9 @@ const config = {
     },
     extend: {
       colors: {
+        rchs: "#0474ed",
+        rchsDark: "#002b7a",
+        rchsLight: "#5993ff",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -52,14 +55,6 @@ const config = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // sidebar:{
-        //   DEFAULT: "hsl(var(--sidebar))",
-        //   foreground: "hsl(var(--sidebar-foreground))",
-        //   muted:{
-        //     DEFAULT: "hsl(var(--sidebar-muted))",
-        //     foreground: "hsl(var(--sidebar-muted-foreground))",            
-        //   }
-        // }
       },
       borderRadius: {
         lg: "var(--radius)",

@@ -20,17 +20,17 @@ export const SideBarMenuItem = ({ item }: { item: SideNavItem }) => {
         setSubMenuOpen(!subMenuOpen);
     };
 
-    const inactiveLink = classNames("flex items-center min-h-[40px] h-full text-sidebar-foreground py-2 px-4 hover:text-sidebar-muted-foreground  hover:bg-sidebar-muted rounded-md transition duration-200",
+    const inactiveLink = classNames("flex items-center min-h-[40px] h-full text-sidebar-foreground py-2 px-4 hover:text-sidebar-muted-foreground  hover:bg-rchsLight rounded-md transition duration-200",
         { ["justify-center"]: toggleCollapse }
     );
 
-    const activeLink = classNames("rounded-md text-white light:text-black light:bg-[#efefef] bg-[#326164] text-sidebar-muted-foreground");
+    const activeLink = classNames("rounded-md text-white light:text-black light:bg-rchs bg-rchsDark text-sidebar-muted-foreground");
 
     const navMenuDropdownItem = "text-black py-2 px-4 hover:text-white transition duration-200 rounded-md"
 
     const dropdownMenuHeaderLink = classNames(inactiveLink,
         {
-            ["bg-sidebar-muted rounded-b-none"]: subMenuOpen
+            ["bg-rchs"]: subMenuOpen
         }
     );
     return (

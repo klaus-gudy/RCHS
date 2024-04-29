@@ -17,10 +17,10 @@ export default function Header() {
   return (
     <header className={headerStyle}>
       <div className="flex items-center justify-between h-16">
-        <button onClick={sidebarToggle} className="order-2 sm:order-1 bg-[#326164] text-[#ffffff] hover:bg-[#a6cabd] ml-3 rounded-md h-[30px] w-[30px] shadow-md shadow-black/10 transition duration-300 ease-in-out flex items-center justify-center">
+        <button onClick={sidebarToggle} className="order-2 sm:order-1 bg-rchsDark text-[#ffffff] hover:bg-rchsLight ml-3 rounded-md h-[30px] w-[30px] shadow-md shadow-black/10 transition duration-300 ease-in-out flex items-center justify-center">
           <BsList></BsList>
         </button>
-        <div className="order-1 sm:order-2 h-10 w-10 rounded-full bg-[#6ca2ff] flex items-center justify-center text-center">
+        <div className="order-1 sm:order-2 h-10 w-10 rounded-full bg-rchs flex items-center justify-center text-center">
           <UserNav/>
         </div>
       </div>
