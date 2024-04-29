@@ -27,9 +27,9 @@ const MotherDetailsForm: React.FC = () => {
       pregnancies: "",
       births: "",
       alive_children: "",
-      miscarrimother_ages: "",
-      miscarrimother_age_year: "",
-      miscarrimother_age_mother_age: "",
+      miscarriages: "",
+      miscarriage_age: "",
+      miscarriage_year: "",
     });
   
     // Handler for input change
@@ -185,25 +185,26 @@ const MotherDetailsForm: React.FC = () => {
           </div>
 
           <div>
-            <label htmlFor="miscarrimother_ages" className="text-gray-700">
-              miscarrimother_ages
+            <label htmlFor="miscarriages" className="text-gray-700">
+              Miscarriages
             </label>
-            <Input id="miscarrimother_ages" type="number" onChange={handleInputChange} value={formValues.miscarrimother_ages} />
+            <Input id="miscarriages" type="number" onChange={handleInputChange} value={formValues.miscarriages} />
           </div>
 
           <div>
-            <label htmlFor="miscarrimother_age_year" className="text-gray-700">
-              Miscarrimother_age Year
+            <label htmlFor="miscarriage_age" className="text-gray-700">
+              Miscarriage Age
             </label>
-            <Input id="miscarrimother_age_year" type="number" onChange={handleInputChange} value={formValues.miscarrimother_age_year} />
+            <Input id="miscarriage_age" type="number" onChange={handleInputChange} value={formValues.miscarriage_age} />
           </div>
 
           <div>
-            <label htmlFor="miscarrimother_age_mother_age" className="text-gray-700">
-              Miscarrimother_age mother_age
+            <label htmlFor="miscarriage_year" className="text-gray-700">
+              Miscarriage Year
             </label>
-            <Input id="miscarrimother_age_mother_age" type="number" onChange={handleInputChange} value={formValues.miscarrimother_age_mother_age} />
+            <Input id="miscarriage_year" type="number" onChange={handleInputChange} value={formValues.miscarriage_year} />
           </div>
+
         </div>
 
         <div className="flex justify-center mt-6">
