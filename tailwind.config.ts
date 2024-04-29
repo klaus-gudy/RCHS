@@ -19,9 +19,9 @@ const config = {
     },
     extend: {
       colors: {
-        rchs: "#0474ed",
-        rchsDark: "#002b7a",
-        rchsLight: "#5993ff",
+        rchs: "#009CDE",
+        rchsDark: "#1A3673",
+        rchsLight: "#1877F2",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
