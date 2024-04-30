@@ -4,7 +4,6 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "@/components/ui/button";
 import { LoginForm } from "@/app/components/login-form";
-import { signIn } from "next-auth/react";
 
 const Login = () => {
   return (
@@ -20,7 +19,7 @@ const Login = () => {
           Register
         </Link>
         <div className="relative hidden h-full flex-col bg-muted p-10 text-white lg:flex dark:border-r">
-          <div className="absolute inset-0 bg-[#08a29e]" />
+          <div className="absolute inset-0 bg-rchs" />
           <div className="relative z-20 flex items-center text-lg font-medium">
             <Image
               alt="RCHS System"
