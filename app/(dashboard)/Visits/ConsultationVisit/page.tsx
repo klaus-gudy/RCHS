@@ -41,85 +41,87 @@ const ClinicVisitForm: React.FC = () => {
       <h2 className="text-lg font-semibold text-gray-700 capitalize">
         Clinic Visit Form
       </h2>
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <div>
-          <label htmlFor="visit_date" className="text-gray-700">
-            Visit Date
-          </label>
-          <Input
-            id="visit_date"
-            type="date"
-            onChange={handleInputChange}
-            value={formValues.visit_date}
-          />
+      <form onSubmit={onFinish} className="mt-4 space-y-6">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+          <div>
+            <label htmlFor="visit_date" className="text-gray-700">
+              Visit Date
+            </label>
+            <Input
+              id="visit_date"
+              type="date"
+              onChange={handleInputChange}
+              value={formValues.visit_date}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="visit_type" className="text-gray-700">
+              Visit Type
+            </label>
+            <Select
+              id="visit_type"
+              placeholder="Select Visit Type"
+              onChange={handleSelectChange}
+            >
+              <Option value="Consultation">Consultation</Option>
+              <Option value="Vaccination">Vaccination</Option>
+              <Option value="Checkup">Checkup</Option>
+              <Option value="Emergency">Emergency</Option>
+              {/* Add other common visit types here */}
+            </Select>
+          </div>
+
+          <div>
+            <label htmlFor="measurements" className="text-gray-700">
+              Measurements
+            </label>
+            <Input
+              id="measurements"
+              onChange={handleInputChange}
+              value={formValues.measurements}
+              placeholder="Enter measurements (e.g., height, weight)"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="test_results" className="text-gray-700">
+              Test Results
+            </label>
+            <Input.TextArea
+              id="test_results"
+              rows={4}
+              // onChange={handleInputChange}
+              value={formValues.test_results}
+              placeholder="Enter test results"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="additional_notes" className="text-gray-700">
+              Additional Notes
+            </label>
+            <Input.TextArea
+              id="additional_notes"
+              rows={4}
+              // onChange={handleInputChange}
+              value={formValues.additional_notes}
+              placeholder="Enter any additional notes"
+            />
+          </div>
         </div>
 
-        <div>
-          <label htmlFor="visit_type" className="text-gray-700">
-            Visit Type
-          </label>
-          <Select
-            id="visit_type"
-            placeholder="Select Visit Type"
-            onChange={handleSelectChange}
+        <div className="flex justify-center mt-6">
+          <Button
+            type="primary"
+            onClick={onFinish}
+            htmlType="submit"
+            className="bg-rchs"
           >
-            <Option value="Consultation">Consultation</Option>
-            <Option value="Vaccination">Vaccination</Option>
-            <Option value="Checkup">Checkup</Option>
-            <Option value="Emergency">Emergency</Option>
-            {/* Add other common visit types here */}
-          </Select>
+            Submit
+          </Button>
         </div>
-
-        <div>
-          <label htmlFor="measurements" className="text-gray-700">
-            Measurements
-          </label>
-          <Input
-            id="measurements"
-            onChange={handleInputChange}
-            value={formValues.measurements}
-            placeholder="Enter measurements (e.g., height, weight)"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="test_results" className="text-gray-700">
-            Test Results
-          </label>
-          <Input.TextArea
-            id="test_results"
-            rows={4}
-            // onChange={handleInputChange}
-            value={formValues.test_results}
-            placeholder="Enter test results"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="additional_notes" className="text-gray-700">
-            Additional Notes
-          </label>
-          <Input.TextArea
-            id="additional_notes"
-            rows={4}
-            // onChange={handleInputChange}
-            value={formValues.additional_notes}
-            placeholder="Enter any additional notes"
-          />
-        </div>
-      </div>
-
-      <div className="flex justify-center mt-6">
-        <Button
-          type="primary"
-          onClick={onFinish}
-          htmlType="submit"
-          className="bg-rchs"
-        >
-          Submit
-        </Button>
-      </div>
+      </form>
     </section>
   );
 };

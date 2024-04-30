@@ -94,7 +94,7 @@ const ClinicVisitForm: React.FC = () => {
       <h2 className="text-lg font-semibold text-gray-700 capitalize">
         Clinic Visit Form
       </h2>
-
+      <form onSubmit={onFinish} className="mt-4 space-y-6">
       {/* Section 1: Visit Information */}
       <Divider orientation="left" className="text-lg font-semibold">
         Visit Information
@@ -675,6 +675,7 @@ const ClinicVisitForm: React.FC = () => {
           Submit
         </Button>
       </div>
+      </form>
     </section>
   );
 };
