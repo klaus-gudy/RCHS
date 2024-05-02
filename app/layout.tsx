@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import "@mantine/core/styles.css";
-import { ColorSchemeScript } from "@mantine/core";
+import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import AuthProvider from "@/utils/SessionProvider";
 
 import { getServerSession } from "next-auth";
@@ -27,7 +27,9 @@ export default async function RootLayout({
         <ColorSchemeScript />
       </head>
       <body className={inter.className}>
-        <AuthProvider session={session}>{children}</AuthProvider>
+        <AuthProvider session={session}>
+          <MantineProvider>{children}</MantineProvider>
+        </AuthProvider>
       </body>
     </html>
   );

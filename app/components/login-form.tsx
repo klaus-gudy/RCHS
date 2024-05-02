@@ -16,12 +16,11 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false);
   const router = useRouter();
   const [error, setError] = useState("");
-  // const session = useSession();
   const { data: session, status: sessionStatus } = useSession();
 
   useEffect(() => {
     if (sessionStatus === "authenticated") {
-      router.replace("/Login"); // here it was /Dashboard (because user is to be automatically dorected to Dashboard and only acces login page if loged out) but I changed it to /Login due to redirection was always going to/dashboard a page that doesnt exist
+      router.replace("/Login");
     }
   }, [sessionStatus, router]);
 
@@ -53,9 +52,9 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
 
     if (res?.error) {
       setError("Invalid email or password");
-      if (res?.url) router.push("/Dashboard");
     } else {
       setError("");
+      router.push("/Dashboard");
     }
   };
 
