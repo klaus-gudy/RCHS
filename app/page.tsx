@@ -9,7 +9,6 @@ export default async function Home() {
   return (
     <>
       {session ? (
-        // <UserCard user={session?.user} pagetype={"Home"} />
         <Login />
       ) : (
         <h2>Home - No session</h2>

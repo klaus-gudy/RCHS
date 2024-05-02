@@ -3,8 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
-import { RegisterForm } from "@/app/components/register-form";
 import { buttonVariants } from "@/components/ui/button";
+import { RegisterForm } from "@/app/components/register-form";
 
 const Register = () => {
   return (
