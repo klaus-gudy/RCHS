@@ -18,7 +18,7 @@ export function RegisterForm({ className, ...props }: RegisterFormProps) {
 
   React.useEffect(() => {
     if (sessionStatus === "authenticated") {
-      router.replace("/Register"); // here it was /Dashboard (because user is to be automatically dorected to Dashboard and only acces register page if loged out) but I changed it to /Register due to redirection was always going to/dashboard a page that doesnt exist
+      router.replace("/Dashboard");
     }
   }, [sessionStatus, router]);
 
@@ -70,7 +70,7 @@ export function RegisterForm({ className, ...props }: RegisterFormProps) {
   }
 
   return (
-    // sessionStatus !== "authenticated" && (
+    sessionStatus !== "authenticated" && (
       <div className={cn("grid gap-6", className)} {...props}>
         <form onSubmit={handleSubmit}>
           <div className="grid gap-4">
@@ -167,6 +167,6 @@ export function RegisterForm({ className, ...props }: RegisterFormProps) {
           </div>
         </div>
       </div>
-    // )
+    )
   );
 }

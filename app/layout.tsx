@@ -6,7 +6,6 @@ import { ColorSchemeScript, MantineProvider } from "@mantine/core";
 import AuthProvider from "@/utils/SessionProvider";
 
 import { getServerSession } from "next-auth";
-import SessionProvider from "@/utils/SessionProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 

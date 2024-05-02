@@ -20,7 +20,7 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
 
   useEffect(() => {
     if (sessionStatus === "authenticated") {
-      router.replace("/Login");
+      router.replace("/Dashboard");
     }
   }, [sessionStatus, router]);
 
@@ -63,54 +63,56 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
   }
 
   return (
-    <div className={cn("grid gap-6", className)} {...props}>
-      <form onSubmit={handleSubmit}>
-        {error && (
-          <span className="p-4 mb-2 text-lg font-semibold text-white bg-red-500 rounded-md min-w-full">
-            {error}
-          </span>
-        )}
-        <div className="grid gap-4">
-          <div className="grid gap-1">
-            <Label className="sr-only" htmlFor="email">
-              Email
-            </Label>
-            <Input
-              id="email"
-              placeholder="Email"
-              type="email"
-              autoCapitalize="none"
-              autoComplete="email"
-              autoCorrect="off"
-              disabled={isLoading}
-            />
+    sessionStatus !== "authenticated" && (
+      <div className={cn("grid gap-6", className)} {...props}>
+        <form onSubmit={handleSubmit}>
+          {error && (
+            <span className="p-4 mb-2 text-lg font-semibold text-white bg-red-500 rounded-md min-w-full">
+              {error}
+            </span>
+          )}
+          <div className="grid gap-4">
+            <div className="grid gap-1">
+              <Label className="sr-only" htmlFor="email">
+                Email
+              </Label>
+              <Input
+                id="email"
+                placeholder="Email"
+                type="email"
+                autoCapitalize="none"
+                autoComplete="email"
+                autoCorrect="off"
+                disabled={isLoading}
+              />
+            </div>
+            <div className="grid gap-1">
+              <Label className="sr-only" htmlFor="password">
+                Password
+              </Label>
+              <Input
+                id="password"
+                placeholder="Password"
+                type="password"
+                autoComplete="current-password"
+                disabled={isLoading}
+              />
+            </div>
+            <Button disabled={isLoading}>
+              {isLoading && (
+                <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
+              )}
+              Log In
+            </Button>
+            <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
           </div>
-          <div className="grid gap-1">
-            <Label className="sr-only" htmlFor="password">
-              Password
-            </Label>
-            <Input
-              id="password"
-              placeholder="Password"
-              type="password"
-              autoComplete="current-password"
-              disabled={isLoading}
-            />
+        </form>
+        <div className="relative">
+          <div className=" flex justify-center text-sm text-gray-600 hover:text-gray-900">
+            <Link href="/ForgotPassword">Forgot Password?</Link>
           </div>
-          <Button disabled={isLoading}>
-            {isLoading && (
-              <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-            )}
-            Log In
-          </Button>
-          <p className="text-red-600 text-[16px] mb-4">{error && error}</p>
-        </div>
-      </form>
-      <div className="relative">
-        <div className=" flex justify-center text-sm text-gray-600 hover:text-gray-900">
-          <Link href="/ForgotPassword">Forgot Password?</Link>
         </div>
       </div>
-    </div>
+    )
   );
 }
