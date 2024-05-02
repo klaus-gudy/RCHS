@@ -1,3 +1,4 @@
+"use client"
 import { useSideBarToggle } from "@/hooks/use-sidebar-toggle";
 import classNames from "classnames";
 import { BsList } from "react-icons/bs";
