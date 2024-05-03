@@ -29,11 +29,11 @@ export function UserNav() {
       <DropdownMenuContent className="w-56 z-[99998]">
         <DropdownMenuLabel>
           <div className="flex flex-col space-y-1">
-            {/* <p className="text-sm font-medium leading-none">
-              Gabriel D Minzemalulu
-            </p> */}
-            <p className="text-xs leading-none text-muted-foreground">
-            {session?.user?.email}
+            <p className="text-sm font-medium leading-none">
+            {session?.user?.firstName}
+            </p>
+            <p className="text-lg leading-none text-muted-foreground">
+              {session?.user?.email}
             </p>
           </div>
         </DropdownMenuLabel>
