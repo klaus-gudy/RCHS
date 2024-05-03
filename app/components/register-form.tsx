@@ -41,6 +41,8 @@ export function RegisterForm({ className, ...props }: RegisterFormProps) {
       return;
     }
 
+    setIsLoading(true); // Set isLoading to true when submitting the form
+
     try {
       const res = await fetch("/api/register", {
         method: "POST",
@@ -62,6 +64,8 @@ export function RegisterForm({ className, ...props }: RegisterFormProps) {
     } catch (error) {
       setError("Error, try again");
       console.log(error);
+    } finally {
+      setIsLoading(false); // Set isLoading to false after the registration process completes
     }
   };
 

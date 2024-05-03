@@ -44,11 +44,15 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
       return;
     }
 
+    setIsLoading(true); // Set isLoading to true when submitting the form
+
     const res = await signIn("credentials", {
       redirect: false,
       email,
       password,
     });
+
+    setIsLoading(false); // Set isLoading to false after the sign-in process completes
 
     if (res?.error) {
       setError("Invalid email or password");
