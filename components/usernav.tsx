@@ -33,7 +33,7 @@ export function UserNav() {
               Gabriel D Minzemalulu
             </p>
             <p className="text-xs leading-none text-muted-foreground">
-              gabrieldee77@gmail.com
+            {session?.user?.email}
             </p>
           </div>
         </DropdownMenuLabel>
