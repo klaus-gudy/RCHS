@@ -16,6 +16,8 @@ import { signOut, useSession } from "next-auth/react";
 export function UserNav() {
   const { data: session }: any = useSession();
 
+  // Log session object to the console
+  console.log("Session Data:", session);
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
@@ -30,7 +32,10 @@ export function UserNav() {
         <DropdownMenuLabel>
           <div className="flex flex-col space-y-1">
             <p className="text-sm font-medium leading-none">
-            {session?.user?.firstName}
+              {session?.user?.occupation}
+              {session?.user?.firstName}
+              {session?.user?.middleName}
+              {session?.user?.lastName}
             </p>
             <p className="text-lg leading-none text-muted-foreground">
               {session?.user?.email}

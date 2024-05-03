@@ -13,6 +13,22 @@ const userSchema = new Schema(
       type: String,
       required: false,
     },
+    firstName: {
+      type: String,
+      required: false,
+    },
+    middleName: {
+      type: String,
+      required: false,
+    },
+    lastName: {
+      type: String,
+      required: false,
+    },
+    occupation: {
+      type: String,
+      required: false,
+    },
   },
   { timestamps: true }
 );

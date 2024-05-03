@@ -170,7 +170,6 @@ export function RegisterForm({ className, ...props }: RegisterFormProps) {
                 disabled={isLoading}
               />
             </div>
-            {/* Add input field for photo upload if needed */}
             <Button disabled={isLoading}>
               {isLoading && (
                 <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
