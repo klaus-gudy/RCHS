@@ -29,9 +29,9 @@ export function UserNav() {
       <DropdownMenuContent className="w-56 z-[99998]">
         <DropdownMenuLabel>
           <div className="flex flex-col space-y-1">
-            <p className="text-sm font-medium leading-none">
+            {/* <p className="text-sm font-medium leading-none">
               Gabriel D Minzemalulu
-            </p>
+            </p> */}
             <p className="text-xs leading-none text-muted-foreground">
             {session?.user?.email}
             </p>
