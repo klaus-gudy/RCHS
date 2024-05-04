@@ -4,6 +4,16 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema(
   {
+    user_id: {
+      type: String,
+      unique: true,
+      required: true,
+    },
+    username: {
+      type: String,
+      unique: true,
+      required: true,
+    },
     email: {
       type: String,
       unique: true,
@@ -11,23 +21,24 @@ const userSchema = new Schema(
     },
     password: {
       type: String,
-      required: false,
+      required: true,
+
     },
-    firstName: {
+    first_name: {
       type: String,
-      required: false,
+      required: true,
     },
-    middleName: {
+    middle_name: {
       type: String,
-      required: false,
+      required: true,
     },
-    lastName: {
+    last_name: {
       type: String,
-      required: false,
+      required: true,
     },
     occupation: {
       type: String,
-      required: false,
+      required: true,
     },
   },
   { timestamps: true }
