@@ -65,6 +65,10 @@ export function VisistsDataTable<TData extends { id: string; }, TValue>({ // her
     e.preventDefault();
     router.push("/Visits/BeforeCard");
   };
+  const handleParentRegistration = (e: any) => {
+    e.preventDefault();
+    router.push("Records/Mother");
+  };
 
   return (
     <div className="w-full">
@@ -88,6 +92,12 @@ export function VisistsDataTable<TData extends { id: string; }, TValue>({ // her
           className="flex flex-col ml-2"
         >
           Register New Visit
+        </Button>
+        <Button
+          onClick={handleParentRegistration}
+          className="flex flex-col ml-2"
+        >
+          Register Parent
         </Button>
       </div>
       <div className="rounded-md border border-rchsLight">
