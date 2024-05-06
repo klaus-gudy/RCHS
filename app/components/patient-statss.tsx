@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Chart, { ChartConfiguration } from "chart.js/auto";
 
-const AboutStatistics: React.FC = () => {
+const AboutStatisticss: React.FC = () => {
   const [statsData, setStatsData] = useState<any[]>([]);
 
   // Simulating fetching data from the database
@@ -86,7 +86,7 @@ const AboutStatistics: React.FC = () => {
 
   return (
     <div className="flex flex-col w-full 2xl:w-2/3 min-w-full ">
-      <div className="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8 border border-[#08a29e]">
+      <div className="flex-1 bg-white rounded-lg shadow-xl mt-4 p-8 border border-rchs">
         <h4 className="text-xl text-gray-900 font-bold">Statistics</h4>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-4">
@@ -160,4 +160,4 @@ const AboutStatistics: React.FC = () => {
   );
 };
 
-export default AboutStatistics;
+export default AboutStatisticss;
