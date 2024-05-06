@@ -6,9 +6,9 @@ import Image from "next/image";
 export default function Reports() {
   return (
     <>
-    <AboutStatistics/>
-    <AboutStatisticss/>
-    <AboutStatisticsss/>
+      <AboutStatistics />
+      <AboutStatisticss />
+      <AboutStatisticsss />
     </>
-    );
+  );
 }
