@@ -58,7 +58,7 @@ const BoyStatistics: React.FC = () => {
     ];
 
     // Prepare labels and chart data for the main line
-    const labelsMonths = Array.from({ length: 60 }, (_, i) =>
+    const labelsMonths = Array.from({ length: 61 }, (_, i) =>
       (i + 1).toString()
     ); // Convert numbers to strings
 
@@ -158,7 +158,7 @@ const BoyStatistics: React.FC = () => {
           },
           title: {
             display: true,
-            text: "Child Growth Chart",
+            text: "Boy Child Growth Chart",
           },
         },
         scales: {
@@ -182,12 +182,15 @@ const BoyStatistics: React.FC = () => {
             },
           },
           y: {
+            type: 'linear',
+            display: true,
+            position: 'left',
             title: {
               display: true,
               text: "Length (cm)",
             },
             min: 40,
-            max: 125, // Maximum height
+            max: 130, // Maximum height
             ticks: {
               callback: (
                 value: string | number,
@@ -206,18 +209,49 @@ const BoyStatistics: React.FC = () => {
               },
             },
           },
+          y1: {
+            type: 'linear',
+            display: true,
+            position: 'right',
+            title: {
+              display: true,
+              text: "Length (cm)",
+            },
+            min: 40,
+            max: 130, // Maximum height
+            ticks: {
+              callback: (
+                value: string | number,
+                index: number,
+                values: Tick[]
+              ) => {
+                const typedValues = values as unknown as (string | number)[];
+                if (
+                  typeof value === "number" &&
+                  value >= 45 &&
+                  value % 5 === 0
+                ) {
+                  return value.toString();
+                }
+                return "";
+              },
+            },
+            grid: {
+              drawOnChartArea: false,
+            },
+          },
         },
       },
     };
 
     // Chart creation
-    const canvasElement = document.getElementById("lineChart");
+    const canvasElement = document.getElementById("boyLineChart");
     if (canvasElement instanceof HTMLCanvasElement) {
-      const lineChart = new Chart(canvasElement, configLineChart);
+      const boyLineChart = new Chart(canvasElement, configLineChart);
 
       // Cleanup function to destroy chart instance
       return () => {
-        lineChart.destroy();
+        boyLineChart.destroy();
       };
     }
   }, []);
@@ -233,7 +267,7 @@ const BoyStatistics: React.FC = () => {
 
         {/* Line chart canvas */}
         <div className="mt-4">
-          <canvas id="lineChart"></canvas>
+          <canvas id="boyLineChart"></canvas>
         </div>
       </div>
     </div>

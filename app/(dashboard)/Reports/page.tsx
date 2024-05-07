@@ -1,11 +1,15 @@
 import BoyStatistics from "@/app/components/graphs/patient-length-age-boys";
-import AboutStatisticss from "@/app/components/graphs/patient-statss";
+import GirlStatistics from "@/app/components/graphs/patient-length-age-girls";
 
 export default function Reports() {
   return (
     <>
-      <BoyStatistics />
-      <AboutStatisticss />
+      <div>
+        <BoyStatistics />
+      </div>
+      <div>
+        <GirlStatistics />
+      </div>
     </>
   );
 }
