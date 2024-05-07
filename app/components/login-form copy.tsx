@@ -38,7 +38,7 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
       setError("Email is invalid");
       return;
     }
-  
+
     if (!password || password.length < 8) {
       setError("Password is invalid");
       return;
@@ -46,8 +46,24 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
 
     setIsLoading(true); // Set isLoading to true when submitting the form
 
+    // const res = await signIn("credentials", {
+    //   redirect: false,
+    //   email,
+    //   password,
+    // });
+
+    // setIsLoading(false); // Set isLoading to false after the sign-in process completes
+
+    // if (res?.error) {
+    //   setError("Invalid email or password");
+    // } else {
+    //   setError("");
+    //   setError("");
+    //   router.push("/Dashboard");
+    // }
+
     try {
-      const response = await fetch("http:localhost:8000/api/login", {
+      const response = await fetch("your-django-api-login-endpoint", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -62,7 +78,7 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
       // Assuming the response contains a token or session information
       const data = await response.json();
       // Store the token/session information in local storage or a cookie
-      localStorage.setItem("token", data.token);
+      // localStorage.setItem("token", data.token);
       // Redirect to Dashboard page
       router.push("/Dashboard");
     } catch (error: any) { // Explicitly specify the type of error as any
