@@ -58,7 +58,6 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
     //   setError("Invalid email or password");
     // } else {
     //   setError("");
-    //   setError("");
     //   router.push("/Dashboard");
     // }
 
