@@ -1,11 +1,21 @@
 "use client";
 import React, { useEffect } from "react";
 import Chart, { ChartConfiguration, Tick } from "chart.js/auto";
+import {
+  fillBetweenLinesSD2negToSD3negPlugin,
+  fillBetweenLinesSD2toSD2negPlugin,
+} from "@/plugins/fillBetweenLinesPlugin";
+import { drawLineOnTopPlugin } from "@/plugins/drawLineOnTopPlugin";
 
 const GirlStatistics: React.FC = () => {
   useEffect(() => {
+    // Register the Chart plugins
+    Chart.register(fillBetweenLinesSD2toSD2negPlugin);
+    Chart.register(fillBetweenLinesSD2negToSD3negPlugin);
+    Chart.register(drawLineOnTopPlugin);
     // Data preparation
-    const dataLengthAgainstAge = [ // this has also been defined at drawLineOnTopPlugin
+    const dataLengthAgainstAge = [
+      // this has also been defined at drawLineOnTopPlugin
       45, 46, 48, 50, 51.5, 52, 54, 55.5, 57, 58.5, 60, 62, 65, 66.5, 67.5, 69,
       70.5, 72, 73.5, 75, 76, 78, 80, 82, 85, 87.5, 88, 90, 100, 102.5, 103,
       105, 106, 107, 108, 109, 110, 110.5, 111.5, 112.5, 113.5, 114.5, 115,
@@ -183,9 +193,9 @@ const GirlStatistics: React.FC = () => {
             },
           },
           y: {
-            type: 'linear',
+            type: "linear",
             display: true,
-            position: 'left',
+            position: "left",
             title: {
               display: true,
               text: "Length (cm)",
@@ -211,9 +221,9 @@ const GirlStatistics: React.FC = () => {
             },
           },
           y1: {
-            type: 'linear',
+            type: "linear",
             display: true,
-            position: 'right',
+            position: "right",
             title: {
               display: true,
               text: "Length (cm)",

@@ -4,14 +4,12 @@ import Chart, { ChartConfiguration, Tick } from "chart.js/auto";
 import {
   fillBetweenLinesSD2toSD2negPlugin,
   fillBetweenLinesSD2negToSD3negPlugin,
-  fillBetweenLinesSD2toSD3Plugin,
 } from "@/plugins/fillBetweenLinesPlugin";
 import { drawLineOnTopPlugin } from "@/plugins/drawLineOnTopPlugin";
 
 const BoyStatistics: React.FC = () => {
   // Register the Chart plugins
   Chart.register(fillBetweenLinesSD2toSD2negPlugin);
-  Chart.register(fillBetweenLinesSD2toSD3Plugin);
   Chart.register(fillBetweenLinesSD2negToSD3negPlugin);
   Chart.register(drawLineOnTopPlugin);
 
@@ -266,12 +264,6 @@ const BoyStatistics: React.FC = () => {
         boyLineChart.destroy();
       };
     }
-
-    // Register the Chart pluginse
-    Chart.register(fillBetweenLinesSD2toSD2negPlugin);
-    Chart.register(fillBetweenLinesSD2toSD3Plugin);
-    Chart.register(fillBetweenLinesSD2negToSD3negPlugin);
-    Chart.register(drawLineOnTopPlugin);
   }, []);
 
   return (
