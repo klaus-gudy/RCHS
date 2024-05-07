@@ -83,11 +83,11 @@ const GirlStatistics: React.FC = () => {
         label: "SD3neg",
         data: line1Data,
         borderColor: "black",
-        backgroundColor: "rgba(0, 0, 0, 0)", // Transparent background
+        backgroundColor: "rgba(255, 0, 0, 0.5)", // Transparent background
         borderWidth: 1,
         borderDash: [5, 5], // Dotted line
         tension: 0, // Not used for dashed lines
-        fill: false,
+        fill: true,
         pointRadius: 0, // Remove nodes
         pointHoverRadius: 0, // Remove nodes
       },

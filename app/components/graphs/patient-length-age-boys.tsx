@@ -90,7 +90,7 @@ const BoyStatistics: React.FC = () => {
         borderWidth: 1,
         borderDash: [5, 5], // Dotted line
         tension: 0, // Not used for dashed lines
-        fill: false,
+        fill: true,
         pointRadius: 0, // Remove nodes
         pointHoverRadius: 0, // Remove nodes
       },
@@ -122,7 +122,7 @@ const BoyStatistics: React.FC = () => {
         label: "SD2",
         data: line4Data,
         borderColor: "red",
-        backgroundColor: "rgba(255, 0, 0, 0.5)", // Red color with 50% opacity
+        backgroundColor: "rgba(0, 0, 0, 0)", // Red color with 50% opacity
         borderWidth: 1,
         borderDash: [5, 5], // Dotted line
         tension: 0, // Not used for dashed lines
