@@ -5,7 +5,7 @@ import Chart, { ChartConfiguration, Tick } from "chart.js/auto";
 const GirlStatistics: React.FC = () => {
   useEffect(() => {
     // Data preparation
-    const dataLengthAgainstAge = [
+    const dataLengthAgainstAge = [ // this has also been defined at drawLineOnTopPlugin
       45, 46, 48, 50, 51.5, 52, 54, 55.5, 57, 58.5, 60, 62, 65, 66.5, 67.5, 69,
       70.5, 72, 73.5, 75, 76, 78, 80, 82, 85, 87.5, 88, 90, 100, 102.5, 103,
       105, 106, 107, 108, 109, 110, 110.5, 111.5, 112.5, 113.5, 114.5, 115,

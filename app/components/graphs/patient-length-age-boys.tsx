@@ -1,12 +1,24 @@
 "use client";
 import React, { useEffect } from "react";
 import Chart, { ChartConfiguration, Tick } from "chart.js/auto";
-import { fillBetweenLinesSD2toSD2negPlugin, fillBetweenLinesSD2negToSD3negPlugin, fillBetweenLinesSD2toSD3Plugin } from '@/plugins/fillBetweenLinesPlugin';
+import {
+  fillBetweenLinesSD2toSD2negPlugin,
+  fillBetweenLinesSD2negToSD3negPlugin,
+  fillBetweenLinesSD2toSD3Plugin,
+} from "@/plugins/fillBetweenLinesPlugin";
+import { drawLineOnTopPlugin } from "@/plugins/drawLineOnTopPlugin";
 
 const BoyStatistics: React.FC = () => {
+  // Register the Chart plugins
+  Chart.register(fillBetweenLinesSD2toSD2negPlugin);
+  Chart.register(fillBetweenLinesSD2toSD3Plugin);
+  Chart.register(fillBetweenLinesSD2negToSD3negPlugin);
+  Chart.register(drawLineOnTopPlugin);
+
   useEffect(() => {
     // Data preparation
     const dataLengthAgainstAge = [
+      // this has also been defined at drawLineOnTopPlugin
       45, 46, 48, 50, 51.5, 52, 54, 55.5, 57, 58.5, 60, 62, 65, 66.5, 67.5, 69,
       70.5, 72, 73.5, 75, 76, 78, 80, 82, 85, 87.5, 88, 90, 100, 102.5, 103,
       105, 106, 107, 108, 109, 110, 110.5, 111.5, 112.5, 113.5, 114.5, 115,
@@ -76,12 +88,6 @@ const BoyStatistics: React.FC = () => {
         },
       ],
     };
-
-    // Register the Chart pluginse
-    Chart.register(fillBetweenLinesSD2toSD2negPlugin);
-    Chart.register(fillBetweenLinesSD2toSD3Plugin);
-    Chart.register(fillBetweenLinesSD2negToSD3negPlugin);
-    
 
     // Add datasets for constant lines
     const constantLinesDatasets = [
@@ -260,6 +266,12 @@ const BoyStatistics: React.FC = () => {
         boyLineChart.destroy();
       };
     }
+
+    // Register the Chart pluginse
+    Chart.register(fillBetweenLinesSD2toSD2negPlugin);
+    Chart.register(fillBetweenLinesSD2toSD3Plugin);
+    Chart.register(fillBetweenLinesSD2negToSD3negPlugin);
+    Chart.register(drawLineOnTopPlugin);
   }, []);
 
   return (
