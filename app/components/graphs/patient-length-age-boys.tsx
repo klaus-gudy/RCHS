@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import Chart, { ChartConfiguration, Tick } from "chart.js/auto";
+import { fillBetweenLinesPlugin } from '@/plugins/fillBetweenLinesPlugin';
 
 const BoyStatistics: React.FC = () => {
   useEffect(() => {
@@ -76,13 +77,16 @@ const BoyStatistics: React.FC = () => {
       ],
     };
 
+    // Register the plugin with your Chart.js instance
+    Chart.register(fillBetweenLinesPlugin);
+
     // Add datasets for constant lines
     const constantLinesDatasets = [
       {
         label: "SD3neg",
         data: line1Data,
         borderColor: "black",
-        backgroundColor: "rgba(0, 0, 0, 0)", // Transparent background
+        backgroundColor: "rgba(255, 0, 0, 0.5)", // Transparent background
         borderWidth: 1,
         borderDash: [5, 5], // Dotted line
         tension: 0, // Not used for dashed lines
@@ -114,12 +118,11 @@ const BoyStatistics: React.FC = () => {
         pointRadius: 0, // Remove nodes
         pointHoverRadius: 0, // Remove nodes
       },
-
       {
         label: "SD2",
         data: line4Data,
         borderColor: "red",
-        backgroundColor: "rgba(0, 0, 0, 0)", // Transparent background
+        backgroundColor: "rgba(255, 0, 0, 0.5)", // Red color with 50% opacity
         borderWidth: 1,
         borderDash: [5, 5], // Dotted line
         tension: 0, // Not used for dashed lines
@@ -182,9 +185,9 @@ const BoyStatistics: React.FC = () => {
             },
           },
           y: {
-            type: 'linear',
+            type: "linear",
             display: true,
-            position: 'left',
+            position: "left",
             title: {
               display: true,
               text: "Length (cm)",
@@ -210,9 +213,9 @@ const BoyStatistics: React.FC = () => {
             },
           },
           y1: {
-            type: 'linear',
+            type: "linear",
             display: true,
-            position: 'right',
+            position: "right",
             title: {
               display: true,
               text: "Length (cm)",
