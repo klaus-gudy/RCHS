@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import Chart, { ChartConfiguration, Tick } from "chart.js/auto";
 
-const AboutStatistics: React.FC = () => {
+const GirlStatistics: React.FC = () => {
   useEffect(() => {
     // Data preparation
     const dataLengthAgainstAge = [
@@ -71,7 +71,7 @@ const AboutStatistics: React.FC = () => {
           data: dataLengthAgainstAge,
           borderColor: "rgb(54, 162, 235)",
           backgroundColor: "rgba(54, 162, 235, 0.5)",
-          tension: 0.4, // Adjust tension for smoother curves, if needed
+          tension: 0.5, // Adjust tension for smoother curves, if needed
         },
       ],
     };
@@ -79,7 +79,7 @@ const AboutStatistics: React.FC = () => {
     // Add datasets for constant lines
     const constantLinesDatasets = [
       {
-        label: "Line 1",
+        label: "SD3neg",
         data: line1Data,
         borderColor: "black",
         backgroundColor: "rgba(0, 0, 0, 0)", // Transparent background
@@ -91,7 +91,7 @@ const AboutStatistics: React.FC = () => {
         pointHoverRadius: 0, // Remove nodes
       },
       {
-        label: "Line 2",
+        label: "SD2neg",
         data: line2Data,
         borderColor: "red",
         backgroundColor: "rgba(0, 0, 0, 0)", // Transparent background
@@ -103,7 +103,7 @@ const AboutStatistics: React.FC = () => {
         pointHoverRadius: 0, // Remove nodes
       },
       {
-        label: "Line 3",
+        label: "SD0",
         data: line3Data,
         borderColor: "green",
         backgroundColor: "rgba(0, 0, 0, 0)", // Transparent background
@@ -116,7 +116,7 @@ const AboutStatistics: React.FC = () => {
       },
 
       {
-        label: "Line 4",
+        label: "SD2",
         data: line4Data,
         borderColor: "red",
         backgroundColor: "rgba(0, 0, 0, 0)", // Transparent background
@@ -128,7 +128,7 @@ const AboutStatistics: React.FC = () => {
         pointHoverRadius: 0, // Remove nodes
       },
       {
-        label: "Line 5",
+        label: "SD3",
         data: line5Data,
         borderColor: "black",
         backgroundColor: "rgba(0, 0, 0, 0)", // Transparent background
@@ -240,4 +240,4 @@ const AboutStatistics: React.FC = () => {
   );
 };
 
-export default AboutStatistics;
+export default GirlStatistics;
