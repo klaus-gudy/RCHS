@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import Chart, { ChartConfiguration, Tick } from "chart.js/auto";
-import { fillBetweenLinesPlugin } from '@/plugins/fillBetweenLinesPlugin';
+import { fillBetweenLinesSD2toSD2negPlugin, fillBetweenLinesSD2negToSD3negPlugin, fillBetweenLinesSD2toSD3Plugin } from '@/plugins/fillBetweenLinesPlugin';
 
 const BoyStatistics: React.FC = () => {
   useEffect(() => {
@@ -77,8 +77,11 @@ const BoyStatistics: React.FC = () => {
       ],
     };
 
-    // Register the plugin with your Chart.js instance
-    Chart.register(fillBetweenLinesPlugin);
+    // Register the Chart pluginse
+    Chart.register(fillBetweenLinesSD2toSD2negPlugin);
+    Chart.register(fillBetweenLinesSD2toSD3Plugin);
+    Chart.register(fillBetweenLinesSD2negToSD3negPlugin);
+    
 
     // Add datasets for constant lines
     const constantLinesDatasets = [
