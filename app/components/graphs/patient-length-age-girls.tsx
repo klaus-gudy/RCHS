@@ -24,13 +24,20 @@ const GirlStatistics: React.FC = () => {
     ];
 
     // Data for all seven lines
-    const line1Data = [
+    // Data for months 0 to 23
+    const line1DataPart1 = [
       43.6, 47.8, 51, 53.5, 55.6, 57.4, 58.9, 60.3, 61.7, 62.9, 64.1, 65.2,
-      66.3, 67.3, 68.3, 69.3, 70.2, 71.1, 72, 72.8, 73.7, 74.5, 75.2, 76, 76.7,
-      76, 76.8, 77.5, 78.1, 78.8, 79.5, 80.1, 80.7, 81.3, 81.9, 82.5, 83.1,
-      83.6, 84.2, 84.7, 85.3, 85.8, 86.3, 86.8, 87.4, 87.9, 88.4, 88.9, 89.3,
-      89.8, 90.3, 90.7, 91.2, 91.7, 92.1, 92.6, 93, 93.4, 93.9, 94.3, 94.7,
-      95.2,
+      66.3, 67.3, 68.3, 69.3, 70.2, 71.1, 72, 72.8, 73.7, 74.5, 75.2, 76,
+    ];
+
+    // Data for month 24 (two values)
+    const line1DataPart2 = [76.7, 76];
+
+    // Data for months 25 to 60
+    const line1DataPart3 = [
+      76.8, 77.5, 78.1, 78.8, 79.5, 80.1, 80.7, 81.3, 81.9, 82.5, 83.1, 83.6,
+      84.2, 84.7, 85.3, 85.8, 86.3, 86.8, 87.4, 87.9, 88.4, 88.9, 89.3, 89.8,
+      90.3, 90.7, 91.2, 91.7, 92.1, 92.6, 93, 93.4, 93.9, 94.3, 94.7, 95.2,
     ];
 
     const line2Data = [
@@ -91,7 +98,7 @@ const GirlStatistics: React.FC = () => {
     const constantLinesDatasets = [
       {
         label: "SD3neg",
-        data: line1Data,
+        data: [...line1DataPart1, ...line1DataPart2, ...line1DataPart3],
         borderColor: "black",
         backgroundColor: "rgba(255, 0, 0, 0.5)", // Transparent background
         borderWidth: 1,
@@ -101,6 +108,7 @@ const GirlStatistics: React.FC = () => {
         pointRadius: 0, // Remove nodes
         pointHoverRadius: 0, // Remove nodes
       },
+
       {
         label: "SD2neg",
         data: line2Data,
