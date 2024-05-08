@@ -60,31 +60,6 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
       setError("");
       router.push("/Dashboard");
     }
-
-    // try {
-    //   const response = await fetch("your-django-api-login-endpoint", {
-    //     method: "POST",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //     body: JSON.stringify({ email, password }),
-    //   });
-
-    //   if (!response.ok) {
-    //     throw new Error("Invalid email or password");
-    //   }
-
-    //   // Assuming the response contains a token or session information
-    //   const data = await response.json();
-    //   // Store the token/session information in local storage or a cookie
-    //   // localStorage.setItem("token", data.token);
-    //   // Redirect to Dashboard page
-    //   router.push("/Dashboard");
-    // } catch (error) {
-    //   setError(error.message);
-    // } finally {
-    //   setIsLoading(false);
-    // }
   };
 
   if (sessionStatus === "loading") {

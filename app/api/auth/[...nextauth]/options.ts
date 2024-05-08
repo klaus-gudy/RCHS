@@ -12,7 +12,7 @@ export const options: NextAuthOptions = {
   providers: [
     CredentialsProvider({
       name: "Credentials",
-
+      
       credentials: {
         email: {
           label: "Email:",
@@ -25,54 +25,23 @@ export const options: NextAuthOptions = {
           placeholder: "Enter Password",
         },
       },
-
-      async authorize(credentials: any, req) {
-        const { email, password } = credentials;
-        console.log(`paass-${password}`);
+      async authorize(credentials: any) {
+        await connect();
         try {
-          const res = await fetch(`http://127.0.0.1:8000/login/`, {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-
-            body: JSON.stringify({
-              email: email,
-              password: password,
-            }),
-          });
-
-          const user = await res.json();
-          console.log(user);
-          console.log(`status - ${user.status}`);
-
-          if (res.ok && user.status == true) {
-            return user;
-          } else if (res.ok && user.status == false) {
-            throw new Error(`${user.message}`);
-          } else return null;
-        } catch (error) {
-          console.log(error);
-          throw new Error("Unauthorised user");
+          const user = await User.findOne({ email: credentials.email });
+          if (user) {
+            const isPasswordCorrect = await bcrypt.compare(
+              credentials.password,
+              user.password
+            );
+            if (isPasswordCorrect) {
+              return user;
+            }
+          }
+        } catch (err: any) {
+          throw new Error(err);
         }
       },
-      // async authorize(credentials: any) {
-      //   await connect();
-      //   try {
-      //     const user = await User.findOne({ email: credentials.email });
-      //     if (user) {
-      //       const isPasswordCorrect = await bcrypt.compare(
-      //         credentials.password,
-      //         user.password
-      //       );
-      //       if (isPasswordCorrect) {
-      //         return user;
-      //       }
-      //     }
-      //   } catch (err: any) {
-      //     throw new Error(err);
-      //   }
-      // },
 
     }),
   ],
