@@ -33,8 +33,6 @@ export function LoginForm({ className, ...props }: LoginFormProps) {
     e.preventDefault();
     const email = e.currentTarget.email.value;
     const password = e.currentTarget.password.value;
-    // const email = e.target[0].value;
-    // const password = e.target[1].value;
 
     if (!isValidEmail(email)) {
       setError("Email is invalid");
